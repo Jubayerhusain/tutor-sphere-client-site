@@ -46,7 +46,33 @@ function SignIn() {
         }
       });
   };
+  // import axios from "axios";
 
+  // const handleGoogleSignIn = () => {
+  //   handleGoogleAuth()
+  //     .then((result) => {
+  //       const { displayName, email, photoURL } = result.user;
+  
+  //       const userData = {
+  //         name: displayName,
+  //         email: email,
+  //         photo: photoURL,
+  //       };
+  
+  //       axios
+  //         .post("https://tutor-sphere-server-side.vercel.app/users", userData)
+  //         .then(() => {
+  //           navigate(location?.state ? location.state : "/");
+  //         })
+  //         .catch(() => {
+  //           toast.error("Failed to add user to database.");
+  //         });
+  //     })
+  //     .catch(() => {
+  //       toast.error("Google Sign-In failed.");
+  //     });
+  // };
+  
   const handleGoogleSignIn = () => {
     handleGoogleAuth()
       .then((result) => {
@@ -58,20 +84,20 @@ function SignIn() {
           photo: photoURL,
         };
 
-        // fetch("", {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify(userData),
-        // })
-        //   .then((res) => res.json())
-        //   .then(() => {
-        //     navigate(location?.state ? location.state : "/");
-        //   })
-        //   .catch(() => {
-        //     toast.error("Failed to add user to database.");
-        //   });
+        fetch("https://tutor-sphere-server-side.vercel.app/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(location?.state ? location.state : "/");
+          })
+          .catch(() => {
+            toast.error("Failed to add user to database.");
+          });
         navigate(location?.state ? location.state : "/");
       })
       .catch(() => {

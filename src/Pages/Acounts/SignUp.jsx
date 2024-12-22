@@ -9,7 +9,7 @@ function SignUp() {
   const [errors, setErrors] = useState({});
   const { createUser, handleGoogleAuth } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  
   const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
   const validatePassword = (password) =>
     /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password);
@@ -22,15 +22,15 @@ function SignUp() {
     const photo = event.target.photo.value.trim();
 
     const userData = { name, photo, email };
-    // fetch("", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(userData),
-    // }).catch(() => {
-    //   toast.error("Failed to add user to database");
-    // });
+    fetch("https://tutor-sphere-server-side.vercel.app/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    }).catch(() => {
+      toast.error("Failed to add user to database");
+    });
 
     let tempErrors = {};
 
@@ -70,15 +70,15 @@ function SignUp() {
         const { displayName, email, photoURL } = result.user;
         const userData = { name: displayName, email, photo: photoURL };
 
-        // fetch("", {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify(userData),
-        // }).catch(() => {
-        //   toast.error("Failed to add user to database");
-        // });
+        fetch("https://tutor-sphere-server-side.vercel.app/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        }).catch(() => {
+          toast.error("Failed to add user to database");
+        });
 
         navigate("/");
       })
