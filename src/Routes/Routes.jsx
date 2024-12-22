@@ -3,9 +3,10 @@ import Layout from "./../Layout/Layout";
 import Home from "../Pages/Home/Home";
 import FindTutors from "../Pages/FindTutors/FindTutors";
 import AddTutorial from "../Pages/AddTutorial/AddTutorial";
-import MyTutorials from './../Pages/MyTutorials/MyTutorials';
-import MyBookedTutors from './../Pages/MyBookedTutors/MyBookedTutors';
+import MyTutorials from "./../Pages/MyTutorials/MyTutorials";
+import MyBookedTutors from "./../Pages/MyBookedTutors/MyBookedTutors";
 import SignIn from "../Pages/Acounts/SignIn";
+import SignUp from "../Pages/Acounts/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -14,27 +15,31 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/findTutors",
-        element: <FindTutors></FindTutors>
+        element: <FindTutors></FindTutors>,
       },
       {
         path: "/addTutorial",
-        element: <AddTutorial></AddTutorial>
+        element: <AddTutorial></AddTutorial>,
       },
       {
         path: "/myTutorial",
-        element: <MyTutorials></MyTutorials>
+        element: <MyTutorials></MyTutorials>,
       },
       {
         path: "/myBookedTutors",
-        element: <MyBookedTutors></MyBookedTutors>
+        element: <MyBookedTutors></MyBookedTutors>,
       },
       {
-        path: '/signIn',
-        element: <SignIn></SignIn>
+        path: "/signIn",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: '/signUp',
+        element: <SignUp></SignUp>
       }
     ],
   },

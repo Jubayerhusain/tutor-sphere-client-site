@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { AuthContext } from './../../AuthProvider/AuthProvider';
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -32,7 +32,8 @@ function SignIn() {
 
     signInUser(email, password)
       .then(() => {
-        navigate(location?.state ? location.state : "/");
+        // navigate(location?.state ? location.state : "/");
+        navigate('/')
       })
       .catch((err) => {
         if (
@@ -57,20 +58,21 @@ function SignIn() {
           photo: photoURL,
         };
 
-        fetch("", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userData),
-        })
-          .then((res) => res.json())
-          .then(() => {
-            navigate(location?.state ? location.state : "/");
-          })
-          .catch(() => {
-            toast.error("Failed to add user to database.");
-          });
+        // fetch("", {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify(userData),
+        // })
+        //   .then((res) => res.json())
+        //   .then(() => {
+        //     navigate(location?.state ? location.state : "/");
+        //   })
+        //   .catch(() => {
+        //     toast.error("Failed to add user to database.");
+        //   });
+        navigate('/')
       })
       .catch(() => {
         toast.error("Google Sign-In failed.");
@@ -81,16 +83,11 @@ function SignIn() {
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-100 to-blue-100">
       <div className="flex flex-col lg:flex-row w-full max-w-5xl bg-white shadow-lg rounded-lg overflow-hidden">
         {/* Info Section */}
-        <div className="lg:w-1/2 w-full bg-blue-600 text-white flex flex-col justify-center items-center py-10 px-8">
+        <div className="lg:w-1/2 w-full bg-blue-500 text-white flex flex-col justify-center items-center py-10 px-8">
           <h2 className="text-4xl font-bold">Welcome Back!</h2>
           <p className="text-sm mt-4 text-center">
             Sign in to <span className="font-bold">TutorSphere</span> and continue your journey of learning. If you don’t have an account, register now!
           </p>
-          <img
-            src="https://via.placeholder.com/250"
-            alt="Learning Illustration"
-            className="mt-8 w-2/3"
-          />
         </div>
 
         {/* Form Section */}
@@ -158,7 +155,7 @@ function SignIn() {
           {/* Redirect to Sign Up */}
           <p className="mt-8 text-center text-sm text-gray-500">
             Don’t have an account?{' '}
-            <Link to="/signUp" className="text-blue-500 font-semibold hover:underline">Sign Up</Link>
+            <Link to={'/signUp'} className="text-blue-500 font-semibold hover:underline">Sign Up</Link>
           </p>
         </div>
       </div>
