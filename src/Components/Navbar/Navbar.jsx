@@ -67,8 +67,8 @@ function Navbar() {
     </>
   );
   return (
-    <div className="sticky top-0 z-50 ">
-      <div className="navbar bg-base-100 xl:px-14 lg:px-7 shadow-2xl xl:py-4 py-2">
+    <div className="sticky top-0 z-50 shadow-2xl mb-2">
+      <div className="navbar bg-base-100  xl:px-14 lg:px-7 shadow-2xl xl:py-4 py-2">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
