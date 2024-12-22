@@ -51,7 +51,7 @@ function AuthProvider({ children }) {
   const handleGoogleAuth = async () => {
     setLoading(true);
     try {
-      return await signInWithPopup(auth, googleProvider);
+      return signInWithPopup(auth, googleProvider);
     } finally {
       setLoading(false);
     }

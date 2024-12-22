@@ -32,7 +32,7 @@ function SignIn() {
 
     signInUser(email, password)
       .then(() => {
-        // navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
         navigate('/')
       })
       .catch((err) => {
@@ -72,7 +72,7 @@ function SignIn() {
         //   .catch(() => {
         //     toast.error("Failed to add user to database.");
         //   });
-        navigate('/')
+        navigate(location?.state ? location.state : "/");
       })
       .catch(() => {
         toast.error("Google Sign-In failed.");
