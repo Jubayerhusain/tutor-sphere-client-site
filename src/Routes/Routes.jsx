@@ -5,6 +5,7 @@ import FindTutors from "../Pages/FindTutors/FindTutors";
 import AddTutorial from "../Pages/AddTutorial/AddTutorial";
 import MyTutorials from './../Pages/MyTutorials/MyTutorials';
 import MyBookedTutors from './../Pages/MyBookedTutors/MyBookedTutors';
+import SignIn from "../Pages/Acounts/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: "/myBookedTutors",
         element: <MyBookedTutors></MyBookedTutors>
       },
+      {
+        path: '/signIn',
+        element: <SignIn></SignIn>
+      }
     ],
   },
 ]);

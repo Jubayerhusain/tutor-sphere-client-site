@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const linkCenter = (
@@ -134,9 +134,9 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <a className="text-xl font-semibold underline transition text-blue-500 border-2 rounded-md py-2 px-4 border-blue-600 hover:bg-blue-100">
-            Login
-          </a>
+          <Link to={'/signIn'} className="text-xl font-semibold underline transition text-blue-500 border-2 rounded-md py-2 px-4 border-blue-600 hover:bg-blue-100">
+            Sign In
+          </Link>
         </div>
       </div>
     </div>
