@@ -36,7 +36,8 @@ function Bannar() {
                 Connect with expert tutors to master the language of your choice.
               </p>
               <Link
-                to="/find-tutors"
+                // to="/find-tutors"
+                to={'#'}
                 id="view1"
                 className="btn mt-4 border-none bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
               >
@@ -66,7 +67,8 @@ function Bannar() {
                 Get one-on-one guidance to achieve your academic and personal goals.
               </p>
               <Link
-                to="/find-tutors"
+                // to="/find-tutors"
+                to={'#'}
                 id="view2"
                 className="btn mt-4 border-none bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
               >
@@ -96,7 +98,8 @@ function Bannar() {
                 Learn in-demand skills with experienced tutors to excel in life.
               </p>
               <Link
-                to="/find-tutors"
+                // to="/find-tutors"
+                to={'#'}
                 id="view3"
                 className="btn mt-4 border-none bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
               >

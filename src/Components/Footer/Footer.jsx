@@ -4,6 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { FaFacebook } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
 
 function Footer() {
   return (
@@ -67,13 +70,13 @@ function Footer() {
           <p>Location: 123 Tutor Lane, Knowledge City</p>
           <div className="flex space-x-4 mt-4">
             <a href="#" className="text-blue-400 hover:scale-110 transition-transform">
-              <i className="fab fa-facebook fa-lg"></i>
+            <FaFacebook></FaFacebook>
             </a>
             <a href="#" className="text-blue-400 hover:scale-110 transition-transform">
-              <i className="fab fa-twitter fa-lg"></i>
+            <FaSquareXTwitter></FaSquareXTwitter>
             </a>
             <a href="#" className="text-blue-400 hover:scale-110 transition-transform">
-              <i className="fab fa-linkedin fa-lg"></i>
+            <FaLinkedin></FaLinkedin>
             </a>
           </div>
         </div>
