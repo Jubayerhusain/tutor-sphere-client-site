@@ -13,6 +13,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    loader: () => fetch(`https://tutor-sphere-server-side.vercel.app/users`),
     children: [
       {
         path: "/",

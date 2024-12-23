@@ -4,7 +4,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
-function Navbar() {
+function Navbar({currentUser}) {
   const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -129,7 +129,7 @@ function Navbar() {
               <div className="w-14 rounded-full">
                 <img
                   alt=""
-                  src={user?.photoURL || "https://via.placeholder.com/150"}
+                  src={user?.photoURL || currentUser?.photo || "https://via.placeholder.com/150"}
                 />
                 <div className="absolute left-1/2 -translate-x-1/2 bottom-[10px] px-3 py-1 text-sm font-medium text-white/80 rounded opacity-0 group-hover:opacity-100 transition">
                   {user?.displayName || "User Name"}
