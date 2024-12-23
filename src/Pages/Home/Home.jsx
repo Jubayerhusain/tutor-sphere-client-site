@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import Bannar from "./../../Components/Bannar/Bannar";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import LangCategories from "../../Components/LangCategories/LangCategories";
 
 function Home() {
   const { loading } = useContext(AuthContext);
   const languegesCategory = useLoaderData();
-//   const { logo, title, totalTutors } = languegesCategory;
   if (loading || !languegesCategory || !Array.isArray(languegesCategory)) {
     return (
       <div class="flex items-center justify-center h-screen bg-gray-100">
@@ -21,6 +21,7 @@ function Home() {
   return (
     <div className="min-h-screen">
       <Bannar></Bannar>
+      <LangCategories languegesCategory={languegesCategory}></LangCategories>
     </div>
   );
 }
