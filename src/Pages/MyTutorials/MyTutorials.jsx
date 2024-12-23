@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 function MyTutorials() {
   const { user } = useContext(AuthContext);
@@ -73,12 +74,12 @@ function MyTutorials() {
                   </td>
                   <td className="p-4 text-gray-600">{tutorial.review}</td>
                   <td className="p-4 flex space-x-2">
-                    <button className="px-4 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                    <Link className="px-4 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
                       Delete
-                    </button>
-                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    </Link>
+                    <Link to={`/updateTutorial/${tutorial._id}`} className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                       Update
-                    </button>
+                    </Link>
                   </td>
                 </tr>
               ))}

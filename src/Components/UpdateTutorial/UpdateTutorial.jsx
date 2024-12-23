@@ -1,9 +1,30 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
 function UpdateTutorial() {
-    const {user} = useContext(AuthContext);
-    
+  const { user, currentUserFromDB } = useContext(AuthContext);
+  const tutorial = useLoaderData();
+  console.log(tutorial);
+  // Language options
+  const languages = [
+    "English",
+    "Spanish",
+    "French",
+    "German",
+    "Mandarin",
+    "Japanese",
+    "Korean",
+    "Italian",
+    "Hindi",
+    "Bengali",
+    "Arabi",
+    "Portuguese",
+    "Russian",
+    "Urdu",
+    "Turkish",
+    "Swahili",
+  ];
   return (
     <div className="min-h-screen bg-gray-200 p-6">
       <div className="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8 space-y-6">
@@ -18,7 +39,7 @@ function UpdateTutorial() {
             <input
               type="text"
               name="name"
-              value={user?.displayName}
+              defaultValue={user?.displayName || currentUserFromDB?.name}
               disabled
               className="p-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Your name"
@@ -31,7 +52,7 @@ function UpdateTutorial() {
             <input
               type="email"
               name="email"
-              value={user?.email}
+              defaultValue={user?.email || currentUserFromDB?.email}
               disabled
               className="p-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Your email"
@@ -46,7 +67,7 @@ function UpdateTutorial() {
             <input
               type="text"
               name="image"
-              value={formData.image}
+              defaultValue={tutorial.image}
               className="p-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Enter tutorial image URL"
             />
@@ -59,12 +80,12 @@ function UpdateTutorial() {
             </label>
             <select
               name="language"
-              value={formData.language}
+              defaultValue={tutorial.language}
               className="p-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
             >
-              <option value="">Select language</option>
+              <option defaultValue="">Select language</option>
               {languages.map((language, index) => (
-                <option key={index} value={language}>
+                <option key={index} defaultValue={language}>
                   {language}
                 </option>
               ))}
@@ -77,7 +98,7 @@ function UpdateTutorial() {
             <input
               type="number"
               name="price"
-              value={formData.price}
+              defaultValue={tutorial.price}
               className="p-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Enter price"
             />
@@ -90,7 +111,7 @@ function UpdateTutorial() {
             </label>
             <textarea
               name="description"
-              value={formData.description}
+              defaultdefaultValue={tutorial.description}
               className="p-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Enter tutorial description"
             />
@@ -102,7 +123,8 @@ function UpdateTutorial() {
             <input
               type="number"
               name="review"
-              value={formData.review}
+              defaultValue={tutorial.review}
+              disabled
               className="p-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Review (default 0)"
             />

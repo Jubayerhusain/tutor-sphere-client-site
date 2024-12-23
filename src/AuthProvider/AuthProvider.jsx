@@ -30,8 +30,10 @@ function AuthProvider({ children }) {
 
   // Find the currently logged-in user from the fetched users
   useEffect(() => {
+    if (user && allUsers.length > 0) {
       const foundUser = allUsers.find((u) => u.email === user.email);
       setCurrentUserFromDB(foundUser || null);
+    }
   }, [user, allUsers]);
 
   // AUTHENTICATION FUNCTIONS

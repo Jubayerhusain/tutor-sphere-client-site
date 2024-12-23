@@ -8,6 +8,7 @@ import MyBookedTutors from "./../Pages/MyBookedTutors/MyBookedTutors";
 import SignIn from "../Pages/Acounts/SignIn";
 import SignUp from "../Pages/Acounts/SignUp";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import UpdateTutorial from './../Components/UpdateTutorial/UpdateTutorial';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,15 @@ const router = createBrowserRouter([
             <MyBookedTutors></MyBookedTutors>
           </PrivateRoutes>
         ),
+      },
+      {
+        path: '/updateTutorial/:id',
+        element:(
+          <PrivateRoutes>
+            <UpdateTutorial></UpdateTutorial>
+          </PrivateRoutes>
+        ),
+        loader: ({params})=> fetch(`https://tutor-sphere-server-side.vercel.app/tutorial/${params.id}`)
       },
       {
         path: "/signIn",
