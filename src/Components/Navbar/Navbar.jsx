@@ -1,10 +1,9 @@
-
 import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
-function Navbar({currentUser}) {
+function Navbar({ currentUser }) {
   const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -128,11 +127,15 @@ function Navbar({currentUser}) {
             >
               <div className="w-14 rounded-full">
                 <img
-                  alt=""
-                  src={user?.photoURL || currentUser?.photo || "https://via.placeholder.com/150"}
+                  src={
+                    user?.photoURL ||
+                    currentUser?.photo ||
+                    "https://via.placeholder.com/150"
+                  }
+                  alt="User"
                 />
                 <div className="absolute left-1/2 -translate-x-1/2 bottom-[10px] px-3 py-1 text-sm font-medium text-white/80 rounded opacity-0 group-hover:opacity-100 transition">
-                  {user?.displayName || "User Name"}
+                  {user?.displayName || currentUser?.name || "Guest User"}
                 </div>
               </div>
             </div>
@@ -141,13 +144,33 @@ function Navbar({currentUser}) {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link to="/profile">Profile</Link>
+                <Link>
+                  {user?.displayName || currentUser?.name || "Guest User"}
+                </Link>
+              </li>
+              <li>
+                <Link to="#">Profile</Link>
               </li>
               <li>
                 <a>Settings</a>
               </li>
               <li>
-                <button onClick={handleSignOut}>Sign Out</button>
+                {/* <button onClick={handleSignOut}>Sign Out</button> */}
+                {user ? (
+                  <button
+                    onClick={handleSignOut}
+                    className="text-xl font-semibold underline transition text-blue-500 rounded-md py-1 px-3  border-blue-600 hover:bg-blue-100"
+                  >
+                    Sign Out
+                  </button>
+                ) : (
+                  <Link
+                    to={"/signIn"}
+                    className="text-xl font-semibold underline transition text-blue-500  rounded-md py-1 px-3 border-blue-600 hover:bg-blue-100"
+                  >
+                    Sign In
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
