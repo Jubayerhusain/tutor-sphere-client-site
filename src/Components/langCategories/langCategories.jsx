@@ -1,5 +1,6 @@
 import React from "react";
 import { SlArrowRight } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
 function LangCategories({ languegesCategory }) {
   return (
@@ -31,10 +32,12 @@ function LangCategories({ languegesCategory }) {
 
             {/* Hover Arrow Icon */}
             <div className="p-2 rounded-full bg-gray-100 hover:bg-gray-300 cursor-pointer">
-              <SlArrowRight
-                className="text-gray-600 hover:text-black"
-                size={20}
-              />
+              <Link to={`/findTutors/${languege.category}`}>
+                <SlArrowRight
+                  className="text-gray-600 hover:text-black"
+                  size={20}
+                />
+              </Link>
             </div>
           </div>
         ))}

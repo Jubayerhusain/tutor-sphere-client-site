@@ -36,7 +36,7 @@ function Navbar({ currentUser }) {
       </li>
       <li>
         <NavLink
-          to="/findTutors"
+          to="/findTutors/:category"
           className={({ isActive }) =>
             isActive
               ? "text-lg font-bold text-blue-500 hover:text-blue-600"
