@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 function FindTutors() {
-  const { language } = useParams();  // Get category from the URL
-  const allTutors = useLoaderData();  // Data passed by the loader
+  const { language } = useParams();  
+  const allTutors = useLoaderData(); 
   const [tutors, setTutors] = useState(allTutors || []);
 
   useEffect(() => {
@@ -59,9 +59,9 @@ function FindTutors() {
 
               {/* Buttons */}
               <div className="ml-4 flex justify-end flex-col">
-                <button className="bg-blue-500 text-white text-sm py-1 px-3 rounded-lg hover:bg-blue-600">
+                <Link to={`/details/${tutor._id}`} className="bg-blue-500 text-white text-sm py-1 px-3 rounded-lg hover:bg-blue-600">
                   Details
-                </button>
+                </Link>
               </div>
             </div>
           ))

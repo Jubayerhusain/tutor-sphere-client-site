@@ -8,7 +8,8 @@ import MyBookedTutors from "./../Pages/MyBookedTutors/MyBookedTutors";
 import SignIn from "../Pages/Acounts/SignIn";
 import SignUp from "../Pages/Acounts/SignUp";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
-import UpdateTutorial from './../Components/UpdateTutorial/UpdateTutorial';
+import UpdateTutorial from "./../Components/UpdateTutorial/UpdateTutorial";
+import Details from "./../Components/Details/Details";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/findTutors/:category",
         element: <FindTutors></FindTutors>,
-        loader: ({params})=> fetch(`https://tutor-sphere-server-side.vercel.app/tutors/category/${params.category}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://tutor-sphere-server-side.vercel.app/tutors/category/${params.category}`
+          ),
       },
       {
         path: "/addTutorial",
@@ -43,7 +47,7 @@ const router = createBrowserRouter([
           <PrivateRoutes>
             <MyTutorials></MyTutorials>
           </PrivateRoutes>
-        )
+        ),
       },
       {
         path: "/myBookedTutors",
@@ -54,13 +58,25 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/updateTutorial/:id',
-        element:(
+        path: "/updateTutorial/:id",
+        element: (
           <PrivateRoutes>
             <UpdateTutorial></UpdateTutorial>
           </PrivateRoutes>
         ),
-        loader: ({params})=> fetch(`https://tutor-sphere-server-side.vercel.app/tutorial/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://tutor-sphere-server-side.vercel.app/tutorial/${params.id}`
+          ),
+      },
+      {
+        path: "/details/:id",
+        element: (
+          <PrivateRoutes>
+            <Details></Details>
+          </PrivateRoutes>
+        ),
+        loader: ({params}) => fetch(`https://tutor-sphere-server-side.vercel.app/tutorial/${params.id}`)
       },
       {
         path: "/signIn",
