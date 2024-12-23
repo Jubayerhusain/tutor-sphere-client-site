@@ -13,10 +13,28 @@ import { auth } from "../firebase/firebase.init";
 export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // Fixed: Correctly initialize state
+  const [user, setUser] = useState(null); 
+  const [loading, setLoading] = useState(true); 
 
-  // SIGNUP: Create user function
+  // Store users from the database
+  const [allUsers, setAllUsers] = useState([]); 
+  const [currentUserFromDB, setCurrentUserFromDB] = useState(null); 
+
+  // Fetch users from database
+  useEffect(() => {
+    fetch(`https://tutor-sphere-server-side.vercel.app/users`)
+      .then((res) => res.json())
+      .then((data) => setAllUsers(data))
+      .catch((error) => console.error("Failed to fetch users:", error));
+  }, []);
+
+  // Find the currently logged-in user from the fetched users
+  useEffect(() => {
+      const foundUser = allUsers.find((u) => u.email === user.email);
+      setCurrentUserFromDB(foundUser || null);
+  }, [user, allUsers]);
+
+  // AUTHENTICATION FUNCTIONS
   const createUser = async (email, password) => {
     setLoading(true);
     try {
@@ -26,7 +44,6 @@ function AuthProvider({ children }) {
     }
   };
 
-  // SIGNIN: User SignIn function
   const signInUser = async (email, password) => {
     setLoading(true);
     try {
@@ -36,38 +53,39 @@ function AuthProvider({ children }) {
     }
   };
 
-  // SIGNOUT: User SignOut function
   const signOutUser = async () => {
     setLoading(true);
     try {
-      return await signOut(auth);
-    } finally {
-      setLoading(false); // Ensure loading is set to false after sign-out
-    }
-  };
-
-  // GOOGLE AUTH: User SignIn with Google AuthProvider
-  const googleProvider = new GoogleAuthProvider();
-  const handleGoogleAuth = async () => {
-    setLoading(true);
-    try {
-      return signInWithPopup(auth, googleProvider);
+      await signOut(auth);
+      setCurrentUserFromDB(null); // Reset current user data on logout
     } finally {
       setLoading(false);
     }
   };
 
-  // Get the current user
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleAuth = async () => {
+    setLoading(true);
+    try {
+      return await signInWithPopup(auth, googleProvider);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // On Auth State Changed
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      console.log("hey juabyer your current user", currentUser);
-      setLoading(false); // Stop loading once auth state is determined
+      setUser(currentUser || null); // Set current user state
+      setLoading(false); // Stop loading once user state is determined
     });
     return () => unsubscribe();
   }, []);
+
+  // Context Value
   const authInfo = {
     user,
+    currentUserFromDB,
     loading,
     createUser,
     signInUser,
@@ -75,13 +93,14 @@ function AuthProvider({ children }) {
     handleGoogleAuth,
   };
 
+  // RENDERING
   return (
     <AuthContext.Provider value={authInfo}>
       {loading ? (
-        <div class="flex items-center justify-center h-screen bg-gray-100">
-          <div class="relative flex items-center justify-center">
-            <div class="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
-            <div class="absolute inset-0 h-12 w-12 rounded-full border-4 border-gradient-to-r from-green-400 to-blue-500"></div>
+        <div className="flex items-center justify-center h-screen bg-gray-100">
+          <div className="relative flex items-center justify-center">
+            <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
+            <div className="absolute inset-0 h-12 w-12 rounded-full border-4 border-gradient-to-r from-green-400 to-blue-500"></div>
           </div>
         </div>
       ) : (
