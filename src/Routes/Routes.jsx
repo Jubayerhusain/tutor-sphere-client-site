@@ -25,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/findTutors",
         element: <FindTutors></FindTutors>,
+        loader: ()=> fetch(`https://tutor-sphere-server-side.vercel.app/tutors`)
       },
       {
         path: "/addTutorial",
