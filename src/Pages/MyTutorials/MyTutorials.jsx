@@ -10,5 +10,4 @@ function MyTutorials() {
         </div>
     )
 }
-
 export default MyTutorials
