@@ -21,14 +21,19 @@ function MyTutorials() {
   }, [user]);
 
   return (
-    <div className="min-h-[450px] p-6 bg-gray-100">
+    <div className="min-h-[420px] p-6 bg-gray-100">
       <h2 className="text-3xl font-extrabold text-start my-8 text-gray-800">
         My Tutorials
       </h2>
       {tutorials.length === 0 ? (
-        <p className="text-center text-gray-600">No tutorials found!</p>
+        <div class="flex items-center justify-center h-screen bg-gray-100">
+          <div class="relative flex items-center justify-center">
+            <div class="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
+            <div class="absolute inset-0 h-12 w-12 rounded-full border-4 border-gradient-to-r from-green-400 to-blue-500"></div>
+          </div>
+        </div>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto my-10">
           <table className="w-full table-auto border-collapse border-gray-300 shadow-lg bg-white rounded-lg">
             <thead>
               <tr className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
@@ -64,7 +69,7 @@ function MyTutorials() {
                     ${tutorial.price}
                   </td>
                   <td className="p-4 text-gray-600">
-                    {tutorial.description.slice(0, 50)}...
+                    {tutorial.description.slice(0, 70)}...
                   </td>
                   <td className="p-4 text-gray-600">{tutorial.review}</td>
                   <td className="p-4 flex space-x-2">
