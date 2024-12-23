@@ -32,6 +32,8 @@ const router = createBrowserRouter([
             <AddTutorial></AddTutorial>
           </PrivateRoutes>
         ),
+        loader: () =>
+          fetch(`https://tutor-sphere-server-side.vercel.app/users`),
       },
       {
         path: "/myTutorial",
