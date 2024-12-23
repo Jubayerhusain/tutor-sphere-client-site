@@ -41,9 +41,7 @@ const router = createBrowserRouter([
           <PrivateRoutes>
             <MyTutorials></MyTutorials>
           </PrivateRoutes>
-        ),
-        loader: () =>
-          fetch(`https://tutor-sphere-server-side.vercel.app/tutors`),
+        )
       },
       {
         path: "/myBookedTutors",
