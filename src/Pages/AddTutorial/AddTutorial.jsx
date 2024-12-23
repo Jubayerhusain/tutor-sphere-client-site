@@ -67,7 +67,7 @@ function AddTutorial() {
     };
     console.log(tutorialData);
 
-    fetch(``, {
+    fetch(`https://tutor-sphere-server-side.vercel.app/tutors`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,6 +76,7 @@ function AddTutorial() {
     })
       .then((res) => res.json())
       .then((response) => {
+        console.log(response);
         if (response.ok) {
           Swal.fire({
             title: "Success!",

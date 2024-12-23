@@ -33,11 +33,12 @@ function Bannar() {
                 Learn New Languages
               </h1>
               <p className="text-white text-lg md:text-2xl mb-6">
-                Connect with expert tutors to master the language of your choice.
+                Connect with expert tutors to master the language of your
+                choice.
               </p>
               <Link
                 // to="/find-tutors"
-                to={'#'}
+                to={"#"}
                 id="view1"
                 className="btn mt-4 border-none bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
               >
@@ -64,11 +65,12 @@ function Bannar() {
                 Personalized Tutoring
               </h1>
               <p className="text-white text-lg md:text-2xl mb-6">
-                Get one-on-one guidance to achieve your academic and personal goals.
+                Get one-on-one guidance to achieve your academic and personal
+                goals.
               </p>
               <Link
                 // to="/find-tutors"
-                to={'#'}
+                to={"#"}
                 id="view2"
                 className="btn mt-4 border-none bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
               >
@@ -86,7 +88,7 @@ function Bannar() {
         <SwiperSlide>
           <div className="relative w-full h-full z-10 rounded-lg">
             <img
-              src="https://i.ibb.co.com/1G39hGQ/concept-4608281.jpg"
+              src="https://i.ibb.co.com/7pMTv6g/skills-intelligence-job-occupation-recruitment-concept.jpg"
               alt="Skill Development"
               className="w-full h-full object-cover rounded-lg"
             />
@@ -99,7 +101,7 @@ function Bannar() {
               </p>
               <Link
                 // to="/find-tutors"
-                to={'#'}
+                to={"#"}
                 id="view3"
                 className="btn mt-4 border-none bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
               >
@@ -118,4 +120,3 @@ function Bannar() {
 }
 
 export default Bannar;
-
