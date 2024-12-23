@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function MyTutorials() {
   const { user } = useContext(AuthContext);
@@ -20,6 +21,33 @@ function MyTutorials() {
         });
     }
   }, [user]);
+
+  const hundleDelete = (_id) =>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://tutor-sphere-server-side.vercel.app/tutorial/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              setTutorials(tutorials.filter((tutorial) => tutorial._id !== _id));
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          })
+          .catch(() => Swal.fire("Error!", "Something went wrong.", "error"));
+      }
+    });
+  }
+
 
   return (
     <div className="min-h-[420px] p-6 bg-gray-100">
@@ -74,7 +102,7 @@ function MyTutorials() {
                   </td>
                   <td className="p-4 text-gray-600">{tutorial.review}</td>
                   <td className="p-4 flex space-x-2">
-                    <Link className="px-4 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                    <Link onClick={()=>hundleDelete(tutorial._id)} className="px-4 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
                       Delete
                     </Link>
                     <Link to={`/updateTutorial/${tutorial._id}`} className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
