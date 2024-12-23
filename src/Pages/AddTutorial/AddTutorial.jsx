@@ -61,9 +61,9 @@ function AddTutorial() {
       email: formData.email,
       image: formData.image,
       language: formData.language,
-      price: formData.price,
+      price: parseFloat(formData.price),
       description: formData.description,
-      review: formData.review,
+      review: parseFloat(formData.review),
     };
     console.log(tutorialData);
 

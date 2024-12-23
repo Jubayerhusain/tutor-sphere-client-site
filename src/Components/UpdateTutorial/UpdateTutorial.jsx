@@ -1,11 +1,67 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function UpdateTutorial() {
   const { user, currentUserFromDB } = useContext(AuthContext);
   const tutorial = useLoaderData();
   console.log(tutorial);
+
+  const hundleUpdateForm = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const updateData = {
+        name: form.name.value,
+        email: form.email.value,
+        image: form.image.value,
+        language: form.language.value,
+        price: parseFloat(form.price.value) ,
+        description: form.description.value,
+        review: parseFloat(form.review)
+    }
+    console.log('Please update the data', updateData);
+
+    // Send PUT request to update the product
+    fetch(`https://tutor-sphere-server-side.vercel.app/tutorial/${tutorial._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updateData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount > 0) {
+            Swal.fire({
+              title: "Success!",
+              text: "Tutorial updated successfully!",
+              icon: "success",
+              confirmButtonText: "OK",
+            });
+          } else {
+            Swal.fire({
+              title: "Info",
+              text: "No changes made to the tutorial.",
+              icon: "info",
+              confirmButtonText: "OK",
+            });
+          }
+        })
+        .catch((err) => {
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to update tutorial. Please try again.",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+          console.error(err);
+        });
+      
+      
+
+  };
   // Language options
   const languages = [
     "English",
@@ -32,7 +88,7 @@ function UpdateTutorial() {
           Update Tutorial
         </h2>
 
-        <form className="space-y-6">
+        <form onSubmit={hundleUpdateForm} className="space-y-6">
           {/* Name */}
           <div className="form-group grid grid-cols-1 gap-3">
             <label className="text-lg font-medium text-gray-600">Name</label>
@@ -111,7 +167,7 @@ function UpdateTutorial() {
             </label>
             <textarea
               name="description"
-              defaultdefaultValue={tutorial.description}
+              defaultValue={tutorial.description}
               className="p-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
               placeholder="Enter tutorial description"
             />
@@ -129,7 +185,6 @@ function UpdateTutorial() {
               placeholder="Review (default 0)"
             />
           </div>
-
           {/* Submit Button */}
           <div className="text-center">
             <button
