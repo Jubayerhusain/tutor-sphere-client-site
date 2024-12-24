@@ -21,42 +21,47 @@ function MyBookedTutors() {
       });
   }, [user?.email]);
 
+  // Handle Review Action
+  const handleReview = (tutor) => {
+    toast.success(`You can now review the tutorial: ${tutor.name}`);
+  };
+
   return (
-    <div className="min-h-[520px] p-6">
-      <h1 className="text-4xl my-14 font-bold mb-6">
+    <div className="min-h-[520px] p-6 bg-gray-50">
+      <h1 className="text-4xl my-14 font-bold text-center">
         Booked Tutorials ({booked.length})
       </h1>
       {booked.length === 0 ? (
-        <div className="flex items-center justify-center h-screen bg-gray-100">
+        <div className="flex items-center justify-center h-80 bg-gray-100">
           <div className="relative flex items-center justify-center">
             <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {booked.map((tutor, index) => (
             <div
               key={index}
-              className="bg-white flex justify-around shadow-md rounded-lg p-4"
+              className="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out"
             >
               <img
                 src={tutor.image || "https://via.placeholder.com/150"}
                 alt={tutor.name || "Tutor"}
-                className="w-40 h-40 object-cover rounded-sm mb-4"
+                className="h-40 w-full object-cover rounded-t-lg mb-4"
               />
-              <div>
-                <h2 className="text-2xl font-semibold mb-2">
+              <div className="p-2">
+                <h2 className="text-xl font-semibold mb-2">
                   {tutor.name || "N/A"}
                 </h2>
-                <p className="text-lg text-gray-600 mb-2">
+                <p className="text-md text-gray-600 mb-2">
                   <strong>Language:</strong> {tutor.language || "N/A"}
                 </p>
-                <p className="text-lg text-gray-600 mb-2">
-                  <strong>Price:</strong> ${tutor.price || "Free"}
+                <p className="text-md text-gray-600 mb-2">
+                  <strong>Price:</strong> {tutor.price ? `BDT ${tutor.price}` : "Free"}
                 </p>
                 <button
                   onClick={() => handleReview(tutor)}
-                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full mt-4 hover:bg-blue-600 focus:outline-none"
                 >
                   Review
                 </button>
@@ -68,9 +73,5 @@ function MyBookedTutors() {
     </div>
   );
 }
-
-const handleReview = (tutor) => {
-  toast.success(`You can now review the tutorial: ${tutor.name}`);
-};
 
 export default MyBookedTutors;
