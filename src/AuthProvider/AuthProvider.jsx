@@ -14,12 +14,12 @@ import axios from "axios";
 export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
-  const [user, setUser] = useState(null); 
-  const [loading, setLoading] = useState(true); 
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   // Store users from the database
-  const [allUsers, setAllUsers] = useState([]); 
-  const [currentUserFromDB, setCurrentUserFromDB] = useState(null); 
+  const [allUsers, setAllUsers] = useState([]);
+  const [currentUserFromDB, setCurrentUserFromDB] = useState(null);
 
   // Fetch users from database
   useEffect(() => {
@@ -80,16 +80,22 @@ function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser || null);
-      if(currentUser?.email){
-        const user = {email: currentUser.email};
-        axios.post(`http://localhost:4000/jwt`, user,{withCredentials: true})
-        .then(res=> console.log('Login',res.data))
+      if (currentUser?.email) {
+        const user = { email: currentUser.email };
+        axios
+          .post(`http://localhost:4000/jwt`, user, { withCredentials: true })
+          .then((res) => {
+            console.log("Login", res.data);
+            setLoading(false);
+          });
+      } else {
+        axios
+          .post(`http://localhost:4000/logout`, {}, { withCredentials: true })
+          .then((res) => {
+            console.log("Logout", res.data);
+            setLoading(false);
+          });
       }
-      else{
-        axios.post(`http://localhost:4000/logout`, {},{withCredentials: true})
-        .then(res=> console.log('Logout',res.data))
-      }
-      setLoading(false);
     });
     return () => unsubscribe();
   }, []);
