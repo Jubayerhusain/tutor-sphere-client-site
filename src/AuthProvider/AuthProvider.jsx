@@ -9,6 +9,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
+import axios from "axios";
 
 export const AuthContext = createContext();
 
@@ -59,7 +60,7 @@ function AuthProvider({ children }) {
     setLoading(true);
     try {
       await signOut(auth);
-      setCurrentUserFromDB(null); // Reset current user data on logout
+      setCurrentUserFromDB(null);
     } finally {
       setLoading(false);
     }
@@ -78,8 +79,17 @@ function AuthProvider({ children }) {
   // On Auth State Changed
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser || null); // Set current user state
-      setLoading(false); // Stop loading once user state is determined
+      setUser(currentUser || null);
+      if(currentUser?.email){
+        const user = {email: currentUser.email};
+        axios.post(`http://localhost:4000/jwt`, user,{withCredentials: true})
+        .then(res=> console.log('Login',res.data))
+      }
+      else{
+        axios.post(`http://localhost:4000/logout`, {},{withCredentials: true})
+        .then(res=> console.log('Logout',res.data))
+      }
+      setLoading(false);
     });
     return () => unsubscribe();
   }, []);
