@@ -5,6 +5,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import LangCategories from "../../Components/LangCategories/LangCategories";
 import Stats from './../../Components/Stats/Stats';
 import TopTutors from './../../Components/TopTutors/TopTutors';
+import Testimonials from './../../Components/Testimonial/Testimonials';
 
 function Home() {
   const { loading } = useContext(AuthContext);
@@ -26,6 +27,7 @@ function Home() {
       <Stats></Stats>
       <LangCategories languegesCategory={languegesCategory}></LangCategories>
       <TopTutors></TopTutors>
+      <Testimonials></Testimonials>
     </div>
   );
 }
