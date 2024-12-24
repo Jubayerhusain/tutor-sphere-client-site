@@ -45,7 +45,7 @@ function Details() {
         console.error("Error while booking the tutorial:", error);
         Swal.fire({
           title: "Error!",
-          text: "Something went wrong. Please try again later.",
+          text: "This tutor is already booked",
           icon: "error",
           confirmButtonText: "OK",
         });
