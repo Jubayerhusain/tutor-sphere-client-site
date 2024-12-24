@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "name": "Sophia Williams",
+      "feedback": "The tutors are exceptional and the platform is very user-friendly. I was able to improve my skills in no time!",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "name": "Jack Brown",
+      "feedback": "Great platform for learning new languages. The tutors are very skilled and supportive!",
+      "rating": 4.8,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "name": "Emma Smith",
+      "feedback": "I love how interactive and engaging the lessons are. Definitely recommend this platform!",
+      "rating": 4.9,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 4,
+      "name": "James Taylor",
+      "feedback": "The progress I’ve made since joining is incredible. Highly recommend it!",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
+  

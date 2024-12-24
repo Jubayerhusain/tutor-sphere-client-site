@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Emily Johnson",
+    "language": "English",
+    "profession": "IELTS Trainer",
+    "skills": ["Speaking", "Listening", "Writing", "Reading"],
+    "rating": 4.9,
+    "reviews": 112,
+    "students": 200,
+    "image": "https://via.placeholder.com/150",
+    "bio": "An experienced IELTS coach helping students ace their exams with tailored strategies."
+  },
+  {
+    "id": 2,
+    "name": "Akira Takahashi",
+    "language": "Japanese",
+    "profession": "Language Tutor",
+    "skills": ["Kanji", "Grammar", "Conversation", "JLPT Preparation"],
+    "rating": 4.8,
+    "reviews": 98,
+    "students": 180,
+    "image": "https://via.placeholder.com/150",
+    "bio": "A passionate Japanese tutor with expertise in preparing students for the JLPT exams."
+  },
+  {
+    "id": 3,
+    "name": "Liam Brown",
+    "language": "Spanish",
+    "profession": "Language Instructor",
+    "skills": ["Conversation", "Grammar", "Literature"],
+    "rating": 4.7,
+    "reviews": 85,
+    "students": 150,
+    "image": "https://via.placeholder.com/150",
+    "bio": "Specializes in teaching Spanish through immersive conversation and storytelling methods."
+  },
+  {
+    "id": 4,
+    "name": "Sofia Rossi",
+    "language": "Italian",
+    "profession": "Language Specialist",
+    "skills": ["Pronunciation", "Vocabulary Building", "Culture"],
+    "rating": 4.6,
+    "reviews": 76,
+    "students": 140,
+    "image": "https://via.placeholder.com/150",
+    "bio": "Native Italian speaker who brings the beauty of Italian culture into language lessons."
+  },
+  {
+    "id": 5,
+    "name": "Rajesh Sharma",
+    "language": "Hindi",
+    "profession": "Language Coach",
+    "skills": ["Speaking", "Writing", "Grammar"],
+    "rating": 4.8,
+    "reviews": 105,
+    "students": 190,
+    "image": "https://via.placeholder.com/150",
+    "bio": "A dedicated Hindi coach helping students connect with the language and culture effectively."
+  },
+  {
+    "id": 6,
+    "name": "Ming Chen",
+    "language": "Mandarin",
+    "profession": "Chinese Language Trainer",
+    "skills": ["Characters", "Pronunciation", "HSK Preparation"],
+    "rating": 4.9,
+    "reviews": 120,
+    "students": 210,
+    "image": "https://via.placeholder.com/150",
+    "bio": "Helps students master Mandarin through engaging lessons and focused preparation for the HSK."
+  },
+  {
+    "id": 7,
+    "name": "Elena Petrova",
+    "language": "Russian",
+    "profession": "Language Educator",
+    "skills": ["Grammar", "Speaking", "Business Russian"],
+    "rating": 4.7,
+    "reviews": 82,
+    "students": 130,
+    "image": "https://via.placeholder.com/150",
+    "bio": "Guides learners through the nuances of Russian language with customized lessons."
+  },
+  {
+    "id": 8,
+    "name": "Noah Smith",
+    "language": "French",
+    "profession": "French Instructor",
+    "skills": ["Grammar", "Pronunciation", "Literature"],
+    "rating": 4.8,
+    "reviews": 108,
+    "students": 175,
+    "image": "https://via.placeholder.com/150",
+    "bio": "French tutor specializing in conversational skills and literature for intermediate students."
+  },
+  {
+    "id": 9,
+    "name": "Ayesha Khan",
+    "language": "Urdu",
+    "profession": "Language Expert",
+    "skills": ["Reading", "Writing", "Speaking"],
+    "rating": 4.6,
+    "reviews": 74,
+    "students": 145,
+    "image": "https://via.placeholder.com/150",
+    "bio": "Expert in Urdu language teaching with a passion for cultural storytelling."
+  },
+  {
+    "id": 10,
+    "name": "Carlos Hernández",
+    "language": "Portuguese",
+    "profession": "Language Coach",
+    "skills": ["Grammar", "Pronunciation", "Writing"],
+    "rating": 4.7,
+    "reviews": 95,
+    "students": 160,
+    "image": "https://via.placeholder.com/150",
+    "bio": "Helping learners master Portuguese with an immersive and hands-on approach."
+  }
+]
