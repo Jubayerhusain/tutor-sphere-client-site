@@ -83,14 +83,14 @@ function AuthProvider({ children }) {
       if (currentUser?.email) {
         const user = { email: currentUser.email };
         axios
-          .post(`http://localhost:4000/jwt`, user, { withCredentials: true })
+          .post(`https://tutor-sphere-server-side.vercel.app/jwt`, user, { withCredentials: true })
           .then((res) => {
             console.log("Login", res.data);
             setLoading(false);
           });
       } else {
         axios
-          .post(`http://localhost:4000/logout`, {}, { withCredentials: true })
+          .post(`https://tutor-sphere-server-side.vercel.app/logout`, {}, { withCredentials: true })
           .then((res) => {
             console.log("Logout", res.data);
             setLoading(false);
