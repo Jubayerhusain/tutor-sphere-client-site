@@ -19,7 +19,7 @@ function AddTutorial() {
     "Italian",
     "Hindi",
     "Bengali",
-    "Arabi",
+    "Arabic",
     "Portuguese",
     "Russian",
     "Urdu",

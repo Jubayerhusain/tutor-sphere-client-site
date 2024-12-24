@@ -1,9 +1,56 @@
-import React from "react";
+import axios from "axios";
+import React, { useContext } from "react";
+import { useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 function Details() {
-  const tutorial = useLoaderData(); // Fetch data passed via loader
-  const { name, email, image, language, price, description, review } = tutorial; // Destructure tutorial data
+  const { user } = useContext(AuthContext);
+  const tutorial = useLoaderData();
+  const { name, email, image, language, price, description, review } = tutorial;
+
+  const hundleBooked = () => {
+    const bookingData = {
+      ...tutorial,
+      userEmail: user.email,
+    };
+
+    // Axios POST request
+    axios
+      .post(
+        `https://tutor-sphere-server-side.vercel.app/booked-tutors`,
+        bookingData
+      )
+      .then((response) => {
+        console.log(response);
+
+        if (response.status === 200 || response.status === 201) {
+          Swal.fire({
+            title: "Success!",
+            text: "Tutorial booked successfully!",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        } else {
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to book the tutorial. Please try again.",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Error while booking the tutorial:", error);
+        Swal.fire({
+          title: "Error!",
+          text: "Something went wrong. Please try again later.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      });
+  };
 
   return (
     <div className="min-h-[420px] p-6 space-y-6 my-14 bg-gray-50">
@@ -48,8 +95,11 @@ function Details() {
           </ul>
         </div>
         <Link>
-          <p className="w-full py-3 bg-gradient-to-r text-center transition duration-300 ease-in-out from-blue-400 to-gray-500 text-white font-semibold rounded-lg hover:from-gray-500 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-purple-400">
-            Booked Now{" "}
+          <p
+            onClick={hundleBooked}
+            className="w-full py-3 bg-gradient-to-r text-center transition duration-300 ease-in-out from-blue-400 to-gray-500 text-white font-semibold rounded-lg hover:from-gray-500 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-purple-400"
+          >
+            Book Now
           </p>
         </Link>
       </div>
