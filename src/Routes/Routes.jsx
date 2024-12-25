@@ -31,6 +31,7 @@ const router = createBrowserRouter([
             `https://tutor-sphere-server-side.vercel.app/tutors/category/${params.category}`
           ),
       },
+      
       {
         path: "/addTutorial",
         element: (

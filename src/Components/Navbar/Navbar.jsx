@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import ThemeToggler from './../ThemeToggler/ThemeToggler';
 
 function Navbar({ currentUser }) {
   const { user, signOutUser } = useContext(AuthContext);
@@ -82,6 +83,12 @@ function Navbar({ currentUser }) {
           My Booked Tutors
         </NavLink>
       </li>
+      <li>
+        <p
+        className="text-lg font-bold">
+          <ThemeToggler></ThemeToggler>
+        </p>
+      </li>
     </>
   );
 
@@ -113,7 +120,7 @@ function Navbar({ currentUser }) {
               {linkCenter}
             </ul>
           </div>
-          <a className="font-bold text-gray-800 text-2xl">TutorSphere</a>
+          <a className="font-bold  text-2xl">TutorSphere</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{linkCenter}</ul>

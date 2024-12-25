@@ -17,7 +17,7 @@ function UpdateTutorial() {
         email: form.email.value,
         image: form.image.value,
         language: form.language.value,
-        price: parseFloat(form.price.value) ,
+        price: parseFloat(form.price.value),
         description: form.description.value,
         review: parseFloat(form.review)
     }

@@ -9,7 +9,7 @@ function LangCategories({ languegesCategory }) {
         {languegesCategory.map((languege) => (
           <div
             key={languege._id}
-            className=" flex justify-between items-center px-5 py-4 hover:bg-blue-100 bg-white rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
+            className=" flex justify-between items-center px-5 py-4 hover:bg-blue-100 border border-gray-200  rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
           >
             {/* Logo with Grayscale Hover */}
             <div className="w-20 h-20  rounded-full overflow-hidden">
@@ -22,7 +22,7 @@ function LangCategories({ languegesCategory }) {
 
             {/* Title and Total Tutors */}
             <div className="text-center">
-              <h1 className="text-xl font-bold text-gray-800">
+              <h1 className="text-xl font-bold ">
                 {languege.title}
               </h1>
               <p className="text-sm text-gray-500">

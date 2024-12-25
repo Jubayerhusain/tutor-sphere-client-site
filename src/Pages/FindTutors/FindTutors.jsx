@@ -1,28 +1,29 @@
-import React, { useEffect, useState, useMemo } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 
 function FindTutors() {
-  const { language } = useParams();
-  const allTutors = useLoaderData();
-  const [tutors, setTutors] = useState(allTutors || []);
+  const categoriesTutors = useLoaderData();
+  const [tutors, setTutors] = useState(categoriesTutors || []);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const filteredTutors = useMemo(() => {
-    if (language) {
-      return allTutors.filter(
-        (tutor) => tutor.language.toLowerCase() === language.toLowerCase()
-      );
+  useEffect(() => {
+    // Only fetch all tutors if categoriesTutors is empty
+    if (!categoriesTutors || categoriesTutors.length === 0) {
+      setLoading(true);
+      fetch(`https://tutor-sphere-server-side.vercel.app/tutors`)
+        .then((res) => res.json())
+        .then((data) => {
+          setTutors(data);
+          setLoading(false);
+        })
+        .catch(() => setLoading(false)); 
     }
-    return allTutors;
-  }, [language, allTutors]);
+  }, [categoriesTutors]);
 
   useEffect(() => {
-    if (language) {
-      setTutors(filteredTutors);
-    } else {
+    if (search) {
       setLoading(true);
-      // Fetch data based on search query
       const timeoutId = setTimeout(() => {
         fetch(
           `https://tutor-sphere-server-side.vercel.app/tutors?search=${search}`
@@ -32,20 +33,18 @@ function FindTutors() {
             setTutors(data);
             setLoading(false);
           })
-          .catch(() => setLoading(false)); // Handle fetch error
-      }, 300); // Debounce API call by 300ms
-
-      return () => {
-        clearTimeout(timeoutId);
-        setLoading(false); // Ensure loading is false on cleanup
-      };
+          .catch(() => setLoading(false));
+      }, 300);
+      return () => clearTimeout(timeoutId);
     }
-  }, [language, search, filteredTutors]);
+  }, [search]);
 
   return (
     <div className="min-h-[450px] p-6 space-y-4">
       <h1 className="text-2xl font-bold text-center mb-6">
-        {language ? `Tutors for ${language}` : "All Tutors"}
+        {categoriesTutors && categoriesTutors.length > 0
+          ? "Tutors by Category"
+          : "All Tutors"}
       </h1>
       {/* Search Bar */}
       <div className="w-[330px] mx-auto my-5">
@@ -74,7 +73,7 @@ function FindTutors() {
       {/* Tutors List */}
       <div className="my-14 grid grid-cols-1 gap-5 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 2xl:gap-10">
         {loading ? (
-          <div className="flex col-span-12 items-center justify-center h-screen ">
+          <div className="flex col-span-12 items-center justify-center h-screen">
             <div className="relative flex items-center justify-center">
               <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
             </div>
@@ -102,7 +101,7 @@ function FindTutors() {
                 <div className="flex flex-col justify-between text-sm text-gray-700 mt-1">
                   <p>🌐 Language: {tutor?.language || "N/A"}</p>
                   <p>💰 {tutor?.price ? `BDT ${tutor.price}` : "Free"}</p>
-                  <p>Review: {tutor?.review}</p>
+                  <p>Review: {tutor?.review || "No reviews yet"}</p>
                 </div>
                 <p className="text-sm text-gray-600 mt-1">
                   {tutor?.description

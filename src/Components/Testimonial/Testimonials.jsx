@@ -11,13 +11,13 @@ function Testimonials() {
   }, []);
 
   return (
-    <section className="bg-gray-100 py-14">
+    <section className="bg-gray-100/10 py-14">
       <h2 className="text-3xl font-bold text-center mb-8">What Our Users Say</h2>
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
-            className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300"
+            className=" bg-black/10 border-t-2 border-blue-400 shadow-xl rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300"
           >
             <div className="flex items-center mb-4">
               <img
@@ -32,7 +32,7 @@ function Testimonials() {
                 </p>
               </div>
             </div>
-            <p className="text-gray-600">{testimonial.feedback}</p>
+            <p className="">{testimonial.feedback}</p>
           </div>
         ))}
       </div>

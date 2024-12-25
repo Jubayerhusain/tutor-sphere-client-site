@@ -19,7 +19,7 @@ function TopTutors() {
         {tutors.map((tutor) => (
           <div
             key={tutor.id}
-            className="relative bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-500 hover:shadow-2xl transition-all transform hover:scale-105 hover:-translate-y-2"
+            className="relative rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-500 hover:shadow-2xl transition-all transform hover:scale-105 hover:-translate-y-2"
           >
             {/* Image */}
             <div className="overflow-hidden group">
@@ -32,11 +32,11 @@ function TopTutors() {
 
             {/* Card Content */}
             <div className="p-4 flex flex-col items-center text-center">
-              <h2 className="text-lg font-semibold text-gray-700 mb-1">
+              <h2 className="text-lg font-semibold  mb-1">
                 {tutor.name}
               </h2>
               <p className="text-sm text-gray-500 mb-2">{tutor.profession}</p>
-              <div className="text-sm text-gray-600 mb-3">
+              <div className="text-sm text-gray-400 mb-3">
                 <strong>Language:</strong> {tutor.language}
               </div>
 

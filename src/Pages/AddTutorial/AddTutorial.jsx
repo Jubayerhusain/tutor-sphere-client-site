@@ -30,7 +30,7 @@ function AddTutorial() {
   // Loading or invalid data handling
   if (loading || !users || !Array.isArray(users)) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="flex items-center justify-center h-screen">
         <div className="relative flex items-center justify-center">
           <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
           <div className="absolute inset-0 h-12 w-12 rounded-full border-4 border-gradient-to-r from-green-400 to-blue-500"></div>
@@ -107,8 +107,8 @@ function AddTutorial() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-200 p-6">
-      <div className="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8 space-y-6">
+    <div className="min-h-screen  p-6">
+      <div className="max-w-xl mx-auto  rounded-lg shadow-md p-8 space-y-6">
         <h2 className="text-3xl font-semibold text-center text-gray-700 mb-6">
           Add a New Tutorial
         </h2>
@@ -116,7 +116,7 @@ function AddTutorial() {
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Name */}
           <div className="form-group grid grid-cols-1 gap-3">
-            <label className="text-lg font-medium text-gray-600">Name</label>
+            <label className="text-lg font-medium ">Name</label>
             <input
               type="text"
               name="name"
