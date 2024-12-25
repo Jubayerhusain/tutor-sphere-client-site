@@ -1,31 +1,85 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 function FindTutors() {
-  const { language } = useParams();  
-  const allTutors = useLoaderData(); 
+  const { language } = useParams();
+  const allTutors = useLoaderData();
   const [tutors, setTutors] = useState(allTutors || []);
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const filteredTutors = useMemo(() => {
+    if (language) {
+      return allTutors.filter(
+        (tutor) => tutor.language.toLowerCase() === language.toLowerCase()
+      );
+    }
+    return allTutors;
+  }, [language, allTutors]);
 
   useEffect(() => {
     if (language) {
-      // Filter data based on language if set
-      const filteredTutors = allTutors.filter((tutor) => tutor.language === language);
       setTutors(filteredTutors);
-    } else if (!allTutors.length) {
-      // Fetch the API data if allTutors isn't available
-      fetch('https://tutor-sphere-server-side.vercel.app/tutors')
-        .then((res) => res.json())
-        .then((data) => setTutors(data));
+    } else {
+      setLoading(true);
+      // Fetch data based on search query
+      const timeoutId = setTimeout(() => {
+        fetch(
+          `https://tutor-sphere-server-side.vercel.app/tutors?search=${search}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setTutors(data);
+            setLoading(false);
+          })
+          .catch(() => setLoading(false)); // Handle fetch error
+      }, 300); // Debounce API call by 300ms
+
+      return () => {
+        clearTimeout(timeoutId);
+        setLoading(false); // Ensure loading is false on cleanup
+      };
     }
-  }, [language, allTutors]);
+  }, [language, search, filteredTutors]);
 
   return (
     <div className="min-h-[450px] p-6 space-y-4">
       <h1 className="text-2xl font-bold text-center mb-6">
         {language ? `Tutors for ${language}` : "All Tutors"}
       </h1>
+      {/* Search Bar */}
+      <div className="w-[330px] mx-auto my-5">
+        <label className="input input-bordered flex items-center gap-2">
+          <input
+            onChange={(e) => setSearch(e.target.value)}
+            type="text"
+            className="grow"
+            placeholder="Search for a tutor by language"
+            aria-label="Search tutors by language"
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="h-4 w-4 opacity-70"
+          >
+            <path
+              fillRule="evenodd"
+              d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </label>
+      </div>
+      {/* Tutors List */}
       <div className="my-14 grid grid-cols-1 gap-5 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 2xl:gap-10">
-        {tutors.length > 0 ? (
+        {loading ? (
+          <div className="flex col-span-12 items-center justify-center h-screen ">
+            <div className="relative flex items-center justify-center">
+              <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
+            </div>
+          </div>
+        ) : tutors.length > 0 ? (
           tutors.map((tutor) => (
             <div
               key={tutor?._id}
@@ -42,7 +96,9 @@ function FindTutors() {
 
               {/* Details */}
               <div className="ml-4 flex-grow">
-                <h2 className="text-md font-semibold">{tutor?.name || "Tutor Name"}</h2>
+                <h2 className="text-md font-semibold">
+                  {tutor?.name || "Tutor Name"}
+                </h2>
                 <div className="flex flex-col justify-between text-sm text-gray-700 mt-1">
                   <p>🌐 Language: {tutor?.language || "N/A"}</p>
                   <p>💰 {tutor?.price ? `BDT ${tutor.price}` : "Free"}</p>
@@ -59,15 +115,19 @@ function FindTutors() {
 
               {/* Buttons */}
               <div className="ml-4 flex justify-end flex-col">
-                <Link to={`/details/${tutor._id}`} className="bg-blue-500 text-white text-sm py-1 px-3 rounded-lg hover:bg-blue-600">
+                <Link
+                  to={`/details/${tutor._id}`}
+                  className="bg-blue-500 text-white text-sm py-1 px-3 rounded-lg hover:bg-blue-600"
+                >
                   Details
                 </Link>
               </div>
             </div>
           ))
         ) : (
-          <p>No tutors available.</p>
-          
+          <p className="text-center text-gray-600">
+            No tutors found for your search.
+          </p>
         )}
       </div>
     </div>
