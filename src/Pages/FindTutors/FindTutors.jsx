@@ -82,7 +82,7 @@ function FindTutors() {
           tutors.map((tutor) => (
             <div
               key={tutor?._id}
-              className="flex items-center bg-white border rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300"
+              className="flex items-center border rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Profile Image */}
               <div className="flex-shrink-0">
@@ -98,12 +98,12 @@ function FindTutors() {
                 <h2 className="text-md font-semibold">
                   {tutor?.name || "Tutor Name"}
                 </h2>
-                <div className="flex flex-col justify-between text-sm text-gray-700 mt-1">
+                <div className="flex flex-col justify-between text-sm mt-1">
                   <p>🌐 Language: {tutor?.language || "N/A"}</p>
                   <p>💰 {tutor?.price ? `BDT ${tutor.price}` : "Free"}</p>
                   <p>Review: {tutor?.review || "No reviews yet"}</p>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm  mt-1">
                   {tutor?.description
                     ? tutor.description.length > 50
                       ? tutor.description.slice(0, 50) + "..."
