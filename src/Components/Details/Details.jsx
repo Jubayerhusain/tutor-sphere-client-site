@@ -11,20 +11,27 @@ function Details() {
   const { name, email, image, language, price, description, review } = tutorial;
 
   const hundleBooked = () => {
+    if (!user || !user.email) {
+      Swal.fire({
+        title: "Error!",
+        text: "Please log in to book a tutorial.",
+        icon: "warning",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+  
     const bookingData = {
       ...tutorial,
       userEmail: user.email,
     };
-
+  
     // Axios POST request
     axios
-      .post(
-        `https://tutor-sphere-server-side.vercel.app/booked-tutors`,
-        bookingData
-      )
+      .post(`https://tutor-sphere-server-side.vercel.app/bookedTutorsPost/`, bookingData)
       .then((response) => {
         console.log(response);
-
+  
         if (response.status === 200 || response.status === 201) {
           Swal.fire({
             title: "Success!",
@@ -51,6 +58,7 @@ function Details() {
         });
       });
   };
+  
 
   return (
     <div className="min-h-[420px] p-6 space-y-6 my-14 bg-gray-50">
@@ -108,5 +116,4 @@ function Details() {
 }
 
 export default Details;
-
 

@@ -32,10 +32,13 @@ function MyBookedTutors() {
         Booked Tutorials ({booked.length})
       </h1>
       {booked.length === 0 ? (
-        <div className="flex items-center justify-center h-80 bg-gray-100">
+        <div>
+          <h1 className="text-center text-2xl font-bold">No Found Data !</h1>
+          <div className="flex items-center justify-center h-80 bg-gray-100">
           <div className="relative flex items-center justify-center">
             <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
           </div>
+        </div>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
