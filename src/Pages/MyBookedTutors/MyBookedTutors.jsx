@@ -2,11 +2,19 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 function MyBookedTutors() {
   const { user } = useContext(AuthContext);
   const [booked, setBooked] = useState([]);
-
+  const axiosSecure = useAxiosSecure();
+  useEffect(() => {
+    if (user && user.email) {
+      axiosSecure
+        .get(`/tutors/email/${user.email}`)
+        .then((res) => setTutorials(res.data));
+    }
+  }, [user, user.email]);
   useEffect(() => {
     axios
       .get(`https://tutor-sphere-server-side.vercel.app/booked-tutors`)

@@ -4,12 +4,20 @@ import { useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 function Details() {
   const { user } = useContext(AuthContext);
   const tutorial = useLoaderData();
   const { name, email, image, language, price, description, review } = tutorial;
-
+  const axiosSecure = useAxiosSecure();
+  useEffect(() => {
+    if (user && user.email) {
+      axiosSecure
+        .get(`/tutors/email/${user.email}`)
+        .then((res) => setTutorials(res.data));
+    }
+  }, [user, user.email]);
   const hundleBooked = () => {
     if (!user || !user.email) {
       Swal.fire({

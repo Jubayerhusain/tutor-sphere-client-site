@@ -1,12 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 function FindTutors() {
+  const {user} = useContext(AuthContext)
   const categoriesTutors = useLoaderData();
   const [tutors, setTutors] = useState(categoriesTutors || []);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const axiosSecure = useAxiosSecure();
+  useEffect(() => {
+    if (user && user.email) {
+      axiosSecure
+        .get(`/tutors/email/${user.email}`)
+        .then((res) => setTutorials(res.data));
+    }
+  }, [user, user.email]);
   useEffect(() => {
     // Only fetch all tutors if categoriesTutors is empty
     if (!categoriesTutors || categoriesTutors.length === 0) {
