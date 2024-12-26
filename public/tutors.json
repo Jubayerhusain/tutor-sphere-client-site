@@ -8,7 +8,7 @@
     "rating": 4.9,
     "reviews": 112,
     "students": 200,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://bridge.edu/tefl/blog/wp-content/uploads/2024/03/Hyper-personalize-Business-English-featured-image.jpg",
     "bio": "An experienced IELTS coach helping students ace their exams with tailored strategies."
   },
   {
@@ -20,7 +20,7 @@
     "rating": 4.8,
     "reviews": 98,
     "students": 180,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://img.freepik.com/premium-photo/japanese-teacher-man-having-online-class-teaching-english-online-indoor_116547-30904.jpg",
     "bio": "A passionate Japanese tutor with expertise in preparing students for the JLPT exams."
   },
   {
@@ -32,7 +32,7 @@
     "rating": 4.7,
     "reviews": 85,
     "students": 150,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://media.istockphoto.com/id/1227623463/photo/school-teacher-at-your-desk.jpg?s=612x612&w=0&k=20&c=75RnhYws70G9QkzgA6yWIqU55_-czJfZqdiWSBK5Agw=",
     "bio": "Specializes in teaching Spanish through immersive conversation and storytelling methods."
   },
   {
@@ -44,7 +44,7 @@
     "rating": 4.6,
     "reviews": 76,
     "students": 140,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://www.centrostuditaliani.org/wp-content/uploads/2021/12/parliamo-insieme.jpg",
     "bio": "Native Italian speaker who brings the beauty of Italian culture into language lessons."
   },
   {
@@ -56,7 +56,7 @@
     "rating": 4.8,
     "reviews": 105,
     "students": 190,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://c8.alamy.com/comp/D5R9JP/young-smiling-student-learns-the-hindi-language-D5R9JP.jpg",
     "bio": "A dedicated Hindi coach helping students connect with the language and culture effectively."
   },
   {
@@ -68,7 +68,7 @@
     "rating": 4.9,
     "reviews": 120,
     "students": 210,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://vulcanpost.com/wp-content/uploads/2022/11/Fasih-Mandarin-Chinese-language-centre-Malaysia-1024x536.jpg",
     "bio": "Helps students master Mandarin through engaging lessons and focused preparation for the HSK."
   },
   {
@@ -80,7 +80,7 @@
     "rating": 4.7,
     "reviews": 82,
     "students": 130,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwrvwjDZ6jTkjD08zo493RASk4HZAeP2sbaA&s",
     "bio": "Guides learners through the nuances of Russian language with customized lessons."
   },
   {
@@ -92,20 +92,8 @@
     "rating": 4.8,
     "reviews": 108,
     "students": 175,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://media.istockphoto.com/id/1325277142/photo/online-foreign-languages-tutoring-cheerful-arab-male-teacher-giving-french-class.jpg?s=612x612&w=0&k=20&c=Tj43sByZ4Z7Y9pVPrtpljS6ueQXxbYiaz6C6epNU4Nk=",
     "bio": "French tutor specializing in conversational skills and literature for intermediate students."
-  },
-  {
-    "id": 9,
-    "name": "Ayesha Khan",
-    "language": "Urdu",
-    "profession": "Language Expert",
-    "skills": ["Reading", "Writing", "Speaking"],
-    "rating": 4.6,
-    "reviews": 74,
-    "students": 145,
-    "image": "https://via.placeholder.com/150",
-    "bio": "Expert in Urdu language teaching with a passion for cultural storytelling."
   },
   {
     "id": 10,
@@ -116,7 +104,7 @@
     "rating": 4.7,
     "reviews": 95,
     "students": 160,
-    "image": "https://via.placeholder.com/150",
+    "image": "https://avatars.preply.com/i/logos/i/logos/avatar_ke2a4j626gi.jpg",
     "bio": "Helping learners master Portuguese with an immersive and hands-on approach."
   }
 ]
