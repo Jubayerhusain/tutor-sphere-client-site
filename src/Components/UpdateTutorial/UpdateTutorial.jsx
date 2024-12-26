@@ -2,22 +2,11 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 function UpdateTutorial() {
   const { user, currentUserFromDB } = useContext(AuthContext);
   const tutorial = useLoaderData();
   // console.log(tutorial);
-  const axiosSecure = useAxiosSecure();
-  useEffect(() => {
-    if (user && user.email) {
-      axiosSecure
-        .get(`/tutors/email/${user.email}`)
-        .then((res) => {
-          // console.log(res.data)
-        });
-    }
-  }, [user, user.email]);
   const hundleUpdateForm = (e) => {
     e.preventDefault();
     const form = e.target;
