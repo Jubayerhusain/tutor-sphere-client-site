@@ -20,32 +20,33 @@ function MyBookedTutors() {
         console.error("Error fetching booked tutors:", error);
       });
   }, [user?.email]);
-
+  // /booked-tutors/review/
   // Handle Review Action
   // const handleReview = (tutor) => {
   //   toast.success(`You can now review the tutorial: ${tutor.name}`);
   // };
   const handleReview = (tutor) => {
     axios
-        .put(`https://tutor-sphere-server-side.vercel.app/booked-tutors/review/${tutor._id}`)
-        .then((response) => {
-            if (response.status === 200) {
-                toast.success(`Review added successfully for ${tutor.name}`);
-                setBooked((prevBooked) =>
-                    prevBooked.map((item) =>
-                        item._id === tutor._id
-                            ? { ...item, review: (item.review || 0) + 1 }
-                            : item
-                    )
-                );
-            }
-        })
-        .catch((error) => {
-            console.error("Error updating review count:", error);
-            toast.error("Failed to update review count");
-        });
-};
-
+      .put(
+        `https://tutor-sphere-server-side.vercel.app/booked-tutors/review/${tutor._id}`
+      )
+      .then((response) => {
+        if (response.status === 200) {
+          toast.success(`Review added successfully for ${tutor.name}`);
+          setBooked((prevBooked) =>
+            prevBooked.map((item) =>
+              item._id === tutor._id
+                ? { ...item, review: (item.review || 0) + 1 }
+                : item
+            )
+          );
+        }
+      })
+      .catch((error) => {
+        console.error("Error updating review count:", error);
+        toast.error("Failed to update review count");
+      });
+  };
 
   return (
     <div className="min-h-[520px] p-6 ">
@@ -56,10 +57,10 @@ function MyBookedTutors() {
         <div>
           <h1 className="text-center text-2xl font-bold">No Found Data !</h1>
           <div className="flex items-center justify-center h-80 ">
-          <div className="relative flex items-center justify-center">
-            <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
+            <div className="relative flex items-center justify-center">
+              <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
+            </div>
           </div>
-        </div>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -81,7 +82,8 @@ function MyBookedTutors() {
                   <strong>Language:</strong> {tutor.language || "N/A"}
                 </p>
                 <p className="text-md  mb-2">
-                  <strong>Price:</strong> {tutor.price ? `BDT ${tutor.price}` : "Free"}
+                  <strong>Price:</strong>{" "}
+                  {tutor.price ? `BDT ${tutor.price}` : "Free"}
                 </p>
                 <button
                   onClick={() => handleReview(tutor)}
