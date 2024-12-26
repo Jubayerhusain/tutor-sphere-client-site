@@ -1,31 +1,72 @@
 [
-    {
-      "id": 1,
-      "name": "Sophia Williams",
-      "feedback": "The tutors are exceptional and the platform is very user-friendly. I was able to improve my skills in no time!",
-      "rating": 5,
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 2,
-      "name": "Jack Brown",
-      "feedback": "Great platform for learning new languages. The tutors are very skilled and supportive!",
-      "rating": 4.8,
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 3,
-      "name": "Emma Smith",
-      "feedback": "I love how interactive and engaging the lessons are. Definitely recommend this platform!",
-      "rating": 4.9,
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 4,
-      "name": "James Taylor",
-      "feedback": "The progress I’ve made since joining is incredible. Highly recommend it!",
-      "rating": 5,
-      "image": "https://via.placeholder.com/150"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Sophia Williams",
+    "feedback": "The tutors are exceptional and the platform is very user-friendly. I was able to improve my skills in no time!",
+    "rating": 5,
+    "image": "https://images.squarespace-cdn.com/content/v1/5737c9737c65e49dc21c962d/64df11af-00e0-4c9b-87df-8a5e78790c9b/20230214_Sophia_077-2.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Jack Brown",
+    "feedback": "Great platform for learning new languages. The tutors are very skilled and supportive!",
+    "rating": 4.8,
+    "image": "https://images.squarespace-cdn.com/content/v1/5a9e4a41365f024e2c3802ea/1587926621240-HRLK1B2TGMO5UZ705FQ0/jack_quarantine_crop+.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Emma Smith",
+    "feedback": "I love how interactive and engaging the lessons are. Definitely recommend this platform!",
+    "rating": 4.9,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_E3cqp-J68OOLzfurrogJp4C9Vh7Skb2GAg&s"
+  },
+  {
+    "id": 4,
+    "name": "James Taylor",
+    "feedback": "The progress I’ve made since joining is incredible. Highly recommend it!",
+    "rating": 5,
+    "image": "https://parade.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkwNTc1ODgxOTE5OTMxNTE3/0216-james-taylor-cvr-ftr.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Khalid RD",
+    "feedback": "Excellent tutors who provide practical tips and feedback. Best learning experience ever!",
+    "rating": 5,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB2SgQw0w7rj8bBZ_zuIrpD5E_3NpGHGSkAg&s"
+  },
+  {
+    "id": 6,
+    "name": "Liam Johnson",
+    "feedback": "The personalized courses really helped me master complex concepts. I'm impressed!",
+    "rating": 4.7,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXTfWc0IEdDFn8aKMQIhu-Xd4uU4G2F31QBg&s"
+  },
+  {
+    "id": 7,
+    "name": "Isabella Martinez",
+    "feedback": "Interactive quizzes and engaging content made learning fun. Five stars!",
+    "rating": 5,
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQEARqx3AUymNg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1690998882505?e=2147483647&v=beta&t=Hkjp5qoHeOPPrelhRIgE8g6vUPMCLStZkw9pOOyd55Y"
+  },
+  {
+    "id": 8,
+    "name": "Alexander Lee",
+    "feedback": "This platform boosted my confidence. Amazing resources and guidance!",
+    "rating": 4.9,
+    "image": "https://www.marshall.edu/music/files/Alexander-Lee_400x400.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Emily Clark",
+    "feedback": "I can finally say that I love learning again. Thank you for the incredible support!",
+    "rating": 5,
+    "image": "https://ichef.bbci.co.uk/news/1024/branded_news/61FF/production/_125578052_emiliaclarke2.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Noah Davis",
+    "feedback": "It’s worth every penny. My skills improved drastically. Very happy with the service!",
+    "rating": 4.8,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJnb91wY_P77auh45weRxg7spWIOH1AzVBRg&s"
+  }
+]
