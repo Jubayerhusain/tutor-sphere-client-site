@@ -82,8 +82,8 @@ function UpdateTutorial() {
     "Swahili",
   ];
   return (
-    <div className="min-h-screen bg-gray-200 p-6">
-      <div className="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8 space-y-6">
+    <div className="min-h-screen p-6">
+      <div className="max-w-xl mx-auto  rounded-lg shadow-md p-8 space-y-6">
         <h2 className="text-3xl font-semibold text-center text-gray-700 mb-6">
           Update Tutorial
         </h2>
