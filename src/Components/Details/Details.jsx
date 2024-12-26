@@ -61,8 +61,8 @@ function Details() {
   
 
   return (
-    <div className="min-h-[420px] p-6 space-y-6 my-14 bg-gray-50">
-      <div className="max-w-4xl mx-auto bg-white shadow-md rounded-md overflow-hidden">
+    <div className="min-h-[420px] p-6 space-y-6 my-14 ">
+      <div className="max-w-4xl mx-auto  shadow-md rounded-md overflow-hidden">
         {/* Header Section */}
         <div className="flex items-center p-6 border-b">
           {/* Profile Image */}
@@ -75,7 +75,7 @@ function Details() {
           {/* Name and Language */}
           <div className="ml-6">
             <h1 className="text-2xl font-semibold">{name || "Tutor Name"}</h1>
-            <p className="text-gray-500 text-md mt-1">
+            <p className=" text-md mt-1">
               🌐 Language: {language || "N/A"}
             </p>
           </div>
@@ -84,7 +84,7 @@ function Details() {
         {/* Details Section */}
         <div className="p-6">
           <h2 className="text-lg font-semibold mb-4">Details</h2>
-          <ul className="space-y-2 text-gray-700">
+          <ul className="space-y-2 ">
             <li>
               <span className="font-medium">Email:</span> {email || "N/A"}
             </li>

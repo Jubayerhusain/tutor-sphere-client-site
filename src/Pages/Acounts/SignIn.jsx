@@ -101,13 +101,13 @@ function SignIn() {
         navigate(location?.state ? location.state : "/");
       })
       .catch(() => {
-        toast.error("Google Sign-In failed.");
+        // toast.error("Google Sign-In failed.");
       });
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-100 to-blue-100">
-      <div className="flex flex-col lg:flex-row w-full max-w-5xl bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="flex justify-center items-center min-h-screen ">
+      <div className="flex flex-col lg:flex-row w-full max-w-5xl  shadow-lg rounded-lg overflow-hidden">
         {/* Info Section */}
         <div className="lg:w-1/2 w-full bg-blue-500 text-white flex flex-col justify-center items-center py-10 px-8">
           <h2 className="text-4xl font-bold">Welcome Back!</h2>
@@ -119,30 +119,30 @@ function SignIn() {
         {/* Form Section */}
         <div className="lg:w-1/2 w-full py-10 px-8">
           <form onSubmit={handleSignIn} className="space-y-6">
-            <h1 className="text-3xl font-bold text-gray-800">Sign In</h1>
+            <h1 className="text-3xl font-bold ">Sign In</h1>
 
             {/* Email */}
             <div className="space-y-2">
-              <label htmlFor="email" className="text-gray-700 font-semibold">Email</label>
+              <label htmlFor="email" className=" font-semibold">Email</label>
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-3 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
 
             {/* Password */}
             <div className="space-y-2 relative">
-              <label htmlFor="password" className="text-gray-700 font-semibold">Password</label>
+              <label htmlFor="password" className=" font-semibold">Password</label>
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="Enter your password"
-                className="w-full px-4 py-3 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
               <button
@@ -173,7 +173,7 @@ function SignIn() {
           {/* Google Sign-In */}
           <button
             onClick={handleGoogleSignIn}
-            className="w-full py-3 mt-4 border border-gray-300 text-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full py-3 mt-4 border border-gray-300  rounded-lg flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             <FcGoogle className="mr-3 text-2xl" /> Sign In with Google
           </button>

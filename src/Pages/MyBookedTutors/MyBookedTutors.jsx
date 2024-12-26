@@ -27,14 +27,14 @@ function MyBookedTutors() {
   };
 
   return (
-    <div className="min-h-[520px] p-6 bg-gray-50">
+    <div className="min-h-[520px] p-6 ">
       <h1 className="text-4xl my-14 font-bold text-center">
         Booked Tutorials ({booked.length})
       </h1>
       {booked.length === 0 ? (
         <div>
           <h1 className="text-center text-2xl font-bold">No Found Data !</h1>
-          <div className="flex items-center justify-center h-80 bg-gray-100">
+          <div className="flex items-center justify-center h-80 ">
           <div className="relative flex items-center justify-center">
             <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-blue-500 border-dotted"></div>
           </div>
@@ -45,7 +45,7 @@ function MyBookedTutors() {
           {booked.map((tutor, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out"
+              className="shadow-lg rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out"
             >
               <img
                 src={tutor.image || "https://via.placeholder.com/150"}
@@ -56,10 +56,10 @@ function MyBookedTutors() {
                 <h2 className="text-xl font-semibold mb-2">
                   {tutor.name || "N/A"}
                 </h2>
-                <p className="text-md text-gray-600 mb-2">
+                <p className="text-md mb-2">
                   <strong>Language:</strong> {tutor.language || "N/A"}
                 </p>
-                <p className="text-md text-gray-600 mb-2">
+                <p className="text-md  mb-2">
                   <strong>Price:</strong> {tutor.price ? `BDT ${tutor.price}` : "Free"}
                 </p>
                 <button

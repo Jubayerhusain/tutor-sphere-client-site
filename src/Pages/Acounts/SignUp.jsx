@@ -89,15 +89,15 @@ function SignUp() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg max-w-4xl overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="flex flex-col md:flex-row rounded-xl shadow-lg max-w-4xl overflow-hidden">
         <div className="md:w-1/2 w-full p-10">
           <form onSubmit={handleRegister} className="space-y-5">
-            <h1 className="text-3xl font-bold text-gray-700">Sign Up</h1>
+            <h1 className="text-3xl font-bold">Sign Up</h1>
             <p className="text-gray-500">Create your account to get started.</p>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Full Name</label>
+              <label className="block text-sm font-medium ">Full Name</label>
               <input
                 type="text"
                 name="name"
@@ -108,7 +108,7 @@ function SignUp() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Profile Picture</label>
+              <label className="block text-sm font-medium ">Profile Picture</label>
               <input
                 type="text"
                 name="photo"
@@ -118,7 +118,7 @@ function SignUp() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Email</label>
+              <label className="block text-sm font-medium ">Email</label>
               <input
                 type="email"
                 name="email"
@@ -129,7 +129,7 @@ function SignUp() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Password</label>
+              <label className="block text-sm font-medium ">Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -139,7 +139,7 @@ function SignUp() {
                 />
                 <button
                   type="button"
-                  className="absolute right-3 top-3 text-gray-600"
+                  className="absolute right-3 top-3 "
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? "Hide" : "Show"}
@@ -169,7 +169,7 @@ function SignUp() {
             <FcGoogle className="mr-3" /> Sign Up with Google
           </button>
 
-          <p className="text-center mt-6 text-gray-500">
+          <p className="text-center mt-6 ">
             Already have an account?{' '}
             <Link to="/signIn" className="text-blue-500 font-medium hover:underline">
               Sign In
@@ -177,10 +177,10 @@ function SignUp() {
           </p>
         </div>
 
-        <div className="hidden md:flex md:w-1/2 bg-blue-500 items-center justify-center text-white">
+        <div className="hidden md:flex md:w-1/2 bg-blue-500 items-center justify-center ">
           <div className="text-center">
-            <h2 className="text-3xl font-bold">Welcome to Equipify</h2>
-            <p className="mt-4 text-sm">
+            <h2 className="text-3xl text-white font-bold">Welcome to Equipify</h2>
+            <p className="mt-4 text-gray-200 text-sm">
               Start managing and organizing your sports equipment efficiently.
             </p>
           </div>
