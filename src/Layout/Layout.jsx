@@ -21,7 +21,7 @@ function Layout() {
 
   // Find the matched user
   const currentUser = users.find((u) => u.email === user?.email) || null;
-  console.log('hey Juabyer your current users', currentUser);
+  // console.log('hey Juabyer your current users', currentUser);
   return (
     <div>
       <Navbar currentUser={currentUser}></Navbar>

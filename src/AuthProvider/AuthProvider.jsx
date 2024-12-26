@@ -85,14 +85,14 @@ function AuthProvider({ children }) {
         axios
           .post(`https://tutor-sphere-server-side.vercel.app/jwt`, user, { withCredentials: true })
           .then((res) => {
-            console.log("Login", res.data);
+            // console.log("Login", res.data);
             setLoading(false);
           });
       } else {
         axios
           .post(`https://tutor-sphere-server-side.vercel.app/logout`, {}, { withCredentials: true })
           .then((res) => {
-            console.log("Logout", res.data);
+            // console.log("Logout", res.data);
             setLoading(false);
           });
       }

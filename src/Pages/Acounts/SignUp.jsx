@@ -83,7 +83,7 @@ function SignUp() {
         navigate("/");
       })
       .catch((error) => {
-          console.log(error);
+          // console.log(error);
         toast.error("Google Sign-In failed");
       });
   };

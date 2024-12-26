@@ -11,12 +11,12 @@ function Navbar({ currentUser }) {
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
-        console.log("Sign-out successful.");
+        // console.log("Sign-out successful.");
         toast.success("Sign-out successful.");
         navigate("/signIn");
       })
       .catch((error) => {
-        console.log("An error happened.", error);
+        // console.log("An error happened.", error);
         toast.error("An error happened.");
       });
   };

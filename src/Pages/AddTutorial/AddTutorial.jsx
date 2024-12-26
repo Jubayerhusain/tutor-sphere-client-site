@@ -65,7 +65,7 @@ function AddTutorial() {
       description: formData.description,
       review: parseFloat(formData.review),
     };
-    console.log(tutorialData);
+    // console.log(tutorialData);
 
     fetch(`https://tutor-sphere-server-side.vercel.app/tutors`, {
       method: "POST",
@@ -76,7 +76,7 @@ function AddTutorial() {
     })
       .then((res) => res.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         if (response.ok) {
           Swal.fire({
             title: "Success!",

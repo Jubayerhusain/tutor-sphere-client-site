@@ -20,7 +20,7 @@ function Home() {
       </div>
     );
   }
-  console.log(languegesCategory);
+  // console.log(languegesCategory);
   return (
     <div className="min-h-screen">
       <Bannar></Bannar>

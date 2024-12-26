@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 function UpdateTutorial() {
   const { user, currentUserFromDB } = useContext(AuthContext);
   const tutorial = useLoaderData();
-  console.log(tutorial);
+  // console.log(tutorial);
 
   const hundleUpdateForm = (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ function UpdateTutorial() {
         description: form.description.value,
         review: parseFloat(form.review)
     }
-    console.log('Please update the data', updateData);
+    // console.log('Please update the data', updateData);
 
     // Send PUT request to update the product
     fetch(`https://tutor-sphere-server-side.vercel.app/tutorial/${tutorial._id}`, {

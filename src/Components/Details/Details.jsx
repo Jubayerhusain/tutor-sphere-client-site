@@ -30,7 +30,7 @@ function Details() {
     axios
       .post(`https://tutor-sphere-server-side.vercel.app/bookedTutorsPost/`, bookingData)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
   
         if (response.status === 200 || response.status === 201) {
           Swal.fire({
