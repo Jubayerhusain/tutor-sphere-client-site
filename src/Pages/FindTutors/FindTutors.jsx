@@ -89,7 +89,7 @@ function FindTutors() {
                 <img
                   src={tutor?.image || "https://via.placeholder.com/100"}
                   alt={tutor?.name || "Tutor"}
-                  className="w-16 h-16 rounded-sm border-2 border-gray-200"
+                  className=" h-16 rounded-sm border-2 border-gray-200"
                 />
               </div>
 
