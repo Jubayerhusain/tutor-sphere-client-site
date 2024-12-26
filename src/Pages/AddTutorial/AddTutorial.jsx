@@ -91,7 +91,7 @@ function AddTutorial() {
             icon: "success",
             confirmButtonText: "OK",
           }).then(() => {
-            // Reset form here if required
+            form.reset();
           });
         }
       })
