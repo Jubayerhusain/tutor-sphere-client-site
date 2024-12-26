@@ -11,20 +11,6 @@ function MyTutorials() {
   const axiosSecure = useAxiosSecure();
   useEffect(() => {
     if (user && user.email) {
-      // fetch(
-      //   `https://tutor-sphere-server-side.vercel.app/tutors/email/${user.email}`
-      // )
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     setTutorials(data);
-      //   })
-      //   .catch((err) => {
-      //     console.error("Error fetching data:", err.message);
-      //   });
-
-      // axios.get(`http://localhost:4000/tutors/email/${user.email}`, {withCredentials: true})
-      // .then((response) => setTutorials(response.data))
-
       axiosSecure
         .get(`/tutors/email/${user.email}`)
         .then((res) => setTutorials(res.data));
