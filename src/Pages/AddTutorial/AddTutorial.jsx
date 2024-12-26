@@ -2,20 +2,12 @@ import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 function AddTutorial() {
   const { user, loading } = useContext(AuthContext);
   const users = useLoaderData();
 
-  const axiosSecure = useAxiosSecure();
-  useEffect(() => {
-    if (user && user.email) {
-      axiosSecure
-        .get(`/tutors/email/${user.email}`)
-        .then((res) => setTutorials(res.data));
-    }
-  }, [user, user.email]);
+
   // Language options
   const languages = [
     "English",

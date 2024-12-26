@@ -13,7 +13,9 @@ function UpdateTutorial() {
     if (user && user.email) {
       axiosSecure
         .get(`/tutors/email/${user.email}`)
-        .then((res) => setTutorials(res.data));
+        .then((res) => {
+          // console.log(res.data)
+        });
     }
   }, [user, user.email]);
   const hundleUpdateForm = (e) => {
