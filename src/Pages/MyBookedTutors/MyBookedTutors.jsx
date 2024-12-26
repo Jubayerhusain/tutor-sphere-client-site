@@ -22,9 +22,30 @@ function MyBookedTutors() {
   }, [user?.email]);
 
   // Handle Review Action
+  // const handleReview = (tutor) => {
+  //   toast.success(`You can now review the tutorial: ${tutor.name}`);
+  // };
   const handleReview = (tutor) => {
-    toast.success(`You can now review the tutorial: ${tutor.name}`);
-  };
+    axios
+        .put(`https://tutor-sphere-server-side.vercel.app/booked-tutors/review/${tutor._id}`)
+        .then((response) => {
+            if (response.status === 200) {
+                toast.success(`Review added successfully for ${tutor.name}`);
+                setBooked((prevBooked) =>
+                    prevBooked.map((item) =>
+                        item._id === tutor._id
+                            ? { ...item, review: (item.review || 0) + 1 }
+                            : item
+                    )
+                );
+            }
+        })
+        .catch((error) => {
+            console.error("Error updating review count:", error);
+            toast.error("Failed to update review count");
+        });
+};
+
 
   return (
     <div className="min-h-[520px] p-6 ">
