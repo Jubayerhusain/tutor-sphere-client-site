@@ -96,7 +96,7 @@ function SignIn() {
             navigate(location?.state ? location.state : "/");
           })
           .catch(() => {
-            toast.error("Failed to add user to database.");
+            // toast.error("Failed to add user to database.");
           });
         navigate(location?.state ? location.state : "/");
       })

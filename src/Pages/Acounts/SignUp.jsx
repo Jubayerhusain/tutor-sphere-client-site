@@ -77,7 +77,7 @@ function SignUp() {
           },
           body: JSON.stringify(userData),
         }).catch(() => {
-          toast.error("Failed to add user to database");
+          // toast.error("Failed to add user to database");
         });
 
         navigate("/");
