@@ -10,10 +10,12 @@ import SignUp from "../Pages/Acounts/SignUp";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import UpdateTutorial from "./../Components/UpdateTutorial/UpdateTutorial";
 import Details from "./../Components/Details/Details";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage></ErrorPage>,
     element: <Layout></Layout>,
     loader: () => fetch(`https://tutor-sphere-server-side.vercel.app/users`),
     children: [
