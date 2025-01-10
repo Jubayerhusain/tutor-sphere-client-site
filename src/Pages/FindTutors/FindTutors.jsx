@@ -100,7 +100,7 @@ function FindTutors() {
               <div className="flex-shrink-0">
                 <img
                   src={tutor?.image || "https://via.placeholder.com/100"}
-                  alt={tutor?.name || "Tutor"}
+                  alt={tutor?.UserName || "Tutor"}
                   className=" h-16 rounded-sm border-2 border-gray-200"
                 />
               </div>
@@ -108,7 +108,7 @@ function FindTutors() {
               {/* Details */}
               <div className="ml-4 flex-grow">
                 <h2 className="text-md font-semibold">
-                  {tutor?.name || "Tutor Name"}
+                  {"Tutor Name"}
                 </h2>
                 <div className="flex flex-col justify-between text-sm mt-1">
                   <p>🌐 Language: {tutor?.language || "N/A"}</p>

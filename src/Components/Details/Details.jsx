@@ -96,7 +96,6 @@ function Details() {
           <h2 className="text-lg font-semibold mb-4">Details</h2>
           <ul className="space-y-2 ">
             <li>
-              <span className="font-medium">Email:</span> {email || "N/A"}
             </li>
             <li>
               <span className="font-medium">Price:</span>{" "}

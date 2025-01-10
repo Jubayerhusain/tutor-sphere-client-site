@@ -9,14 +9,14 @@ import { Tooltip } from "react-tooltip";
 
 function Bannar() {
   return (
-    <div className="w-full h-[80vh] bg-gray-100 mb-10 z-10 rounded-lg">
+    <div className="w-full h-[70vh] bg-gray-100 mb-10 z-10 rounded-lg">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
         loop={true}
         className="h-full rounded-lg z-10"
       >
