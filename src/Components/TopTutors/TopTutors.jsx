@@ -11,7 +11,7 @@ function TopTutors() {
   }, []);
 
   return (
-    <div className="max-w-screen-xl mx-auto px-6 py-10">
+    <div className="w-11/12 mx-auto py-10">
       <h1 className="text-center text-4xl font-bold mb-12">
         Meet Our Top Tutors
       </h1>
@@ -26,7 +26,7 @@ function TopTutors() {
               <img
                 src={tutor.image}
                 alt={tutor.name}
-                className="w-full h-40 object-cover transition-transform transform group-hover:scale-110 duration-300"
+                className="w-full h-56 object-cover transition-transform transform group-hover:scale-110 duration-300"
               />
             </div>
 
@@ -54,9 +54,9 @@ function TopTutors() {
                   </svg>
                 ))}
               </div>
-              <button className="text-sm bg-blue-500 text-white py-1 px-4 rounded-md hover:bg-blue-600 transition-colors duration-300">
+              {/* <button className="text-sm bg-blue-500 text-white py-1 px-4 rounded-md hover:bg-blue-600 transition-colors duration-300">
                 View Profile
-              </button>
+              </button> */}
             </div>
           </div>
         ))}
