@@ -12,8 +12,8 @@ function Testimonials() {
 
   return (
     <section className="bg-gray-100/10 py-14">
-      <h2 className="text-3xl font-bold text-center mb-8">What Our Users Say</h2>
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h2 className="text-3xl font-bold mt-5 text-center mb-8">What Our Users Say</h2>
+      <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
