@@ -26,7 +26,7 @@ function TopTutors() {
               <img
                 src={tutor.image}
                 alt={tutor.name}
-                className="w-full h-56 object-cover transition-transform transform group-hover:scale-110 duration-300"
+                className="w-full lg:h-40  2xl:h-56 object-cover transition-transform transform group-hover:scale-110 duration-300"
               />
             </div>
 
