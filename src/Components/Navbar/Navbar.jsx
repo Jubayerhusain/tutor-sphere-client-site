@@ -29,7 +29,7 @@ function Navbar({ currentUser }) {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-bold text-blue-500 hover:text-blue-600"
-              : "text-lg hover:bg-blue-100 text-gray-500 font-semibold hover:text-blue-500 hover:underline"
+              : "text-lg hover:bg-blue-100  font-semibold hover:text-blue-500 hover:underline"
           }
         >
           Home
@@ -41,7 +41,7 @@ function Navbar({ currentUser }) {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-bold text-blue-500 hover:text-blue-600"
-              : "text-lg hover:bg-blue-100 text-gray-500 font-semibold hover:text-blue-500 hover:underline"
+              : "text-lg hover:bg-blue-100  font-semibold hover:text-blue-500 hover:underline"
           }
         >
           Find Tutors
@@ -53,7 +53,7 @@ function Navbar({ currentUser }) {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-bold text-blue-500 hover:text-blue-600"
-              : "text-lg hover:bg-blue-100 text-gray-500 font-semibold hover:text-blue-500 hover:underline"
+              : "text-lg hover:bg-blue-100  font-semibold hover:text-blue-500 hover:underline"
           }
         >
           Add Tutorial
@@ -65,7 +65,7 @@ function Navbar({ currentUser }) {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-bold text-blue-500 hover:text-blue-600"
-              : "text-lg hover:bg-blue-100 text-gray-500 font-semibold hover:text-blue-500 hover:underline"
+              : "text-lg hover:bg-blue-100  font-semibold hover:text-blue-500 hover:underline"
           }
         >
           My Tutorial
@@ -77,7 +77,7 @@ function Navbar({ currentUser }) {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-bold text-blue-500 hover:text-blue-600"
-              : "text-lg hover:bg-blue-100 text-gray-500 font-semibold hover:text-blue-500 hover:underline"
+              : "text-lg hover:bg-blue-100  font-semibold hover:text-blue-500 hover:underline"
           }
         >
           My Booked Tutors
