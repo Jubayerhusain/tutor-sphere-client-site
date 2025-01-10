@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 function LangCategories({ languegesCategory }) {
   return (
     <div>
-      <div className="w-11/12 my-14 lg:w-9/12 mx-auto grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+      <div>
+        <h1 className="text-center text-4xl mt-4 font-bold">Language Categories</h1>
+      </div>
+      <div className="w-11/12 my-14 lg:w-11/12 mx-auto grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
         {languegesCategory.map((languege) => (
           <div
             key={languege._id}
