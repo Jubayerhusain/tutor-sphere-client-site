@@ -66,7 +66,7 @@ const ContactUs = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm  d   focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm  d   focus:ring-indigo-500 focus:border-indigo-500"
                   placeholder="Enter your email"
                   required
                 />
@@ -84,14 +84,14 @@ const ContactUs = () => {
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm  d   focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-lg shadow-sm  d   focus:ring-indigo-500 focus:border-indigo-500"
                   placeholder="Type your message"
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-indigo-500 dark:bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 dark:hover:bg-indigo-700 transition"
+                className="w-full  text-white py-2 px-4 rounded-lg bg-blue-500 hover:bg-blue-600"
               >
                 Send Message
               </button>
