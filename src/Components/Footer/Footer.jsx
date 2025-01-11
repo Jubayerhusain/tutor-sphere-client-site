@@ -42,20 +42,20 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link
-                to="/contact"
+              <a
+                href="#contact"
                 className="hover:text-blue-400 transition-colors"
               >
                 Contact Us
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                to="#FAQSection"
+              <a
+                href="#FAQSection"
                 className="hover:text-blue-400 transition-colors"
               >
                 FAQ
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
