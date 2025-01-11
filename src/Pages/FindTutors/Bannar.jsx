@@ -10,10 +10,10 @@ const Bannar = () => {
             "url(https://i.ibb.co.com/m6CvK8r/kenny-eliason-z-FSo6bn-ZJTw-unsplash.jpg)",
         }}
       >
-        <div className="hero-overlay bg-opacity-40"></div>
+        <div className="hero-overlay bg-opacity-20"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-xl">
-            <h1 className="mb-5 text-5xl text-yellow-400 font-bold"> Welcome to Our Tutors</h1>
+            <h1 className="mb-5 text-5xl text-white font-bold"> Welcome to Our Tutors</h1>
             <p className="mb-5 text-xl text-gray-100">
               Get personalized learning experiences with industry-leading
               experts who will guide you through your learning journey.

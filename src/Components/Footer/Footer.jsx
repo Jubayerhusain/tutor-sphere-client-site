@@ -11,7 +11,7 @@ import { FaLinkedin } from "react-icons/fa6";
 function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-10 px-5">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
         <div>
           <h2 className="text-2xl font-bold mb-4">TutorSphere</h2>
@@ -25,17 +25,17 @@ function Footer() {
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
-            <li>
+            {/* <li>
               <Link
                 to="/about"
                 className="hover:text-blue-400 transition-colors"
               >
                 About Us
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
-                to="/find-tutors"
+                to="/findTutors/:category"
                 className="hover:text-blue-400 transition-colors"
               >
                 Find Tutors
@@ -51,7 +51,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/faq"
+                to="#FAQSection"
                 className="hover:text-blue-400 transition-colors"
               >
                 FAQ

@@ -7,6 +7,8 @@ import Stats from './../../Components/Stats/Stats';
 import TopTutors from './../../Components/TopTutors/TopTutors';
 import Testimonials from './../../Components/Testimonial/Testimonials';
 import HowItWorks from "../../Components/HowItWorks/HowItWorks";
+import FAQSection from "../../Components/FAQSection/FAQSection";
+import ContactUs from "../../Components/ContactUs/ContactUs";
 
 function Home() {
   const { loading } = useContext(AuthContext);
@@ -29,6 +31,8 @@ function Home() {
       <TopTutors></TopTutors>
       <HowItWorks></HowItWorks>
       <Testimonials></Testimonials>
+      <ContactUs></ContactUs>
+      <FAQSection></FAQSection>
     </div>
   );
 }

@@ -110,7 +110,7 @@ function AddTutorial() {
   return (
     <div className="min-h-screen  p-6">
       <div className="max-w-xl mx-auto  rounded-lg shadow-md p-8 space-y-6">
-        <h2 className="text-3xl font-semibold text-center text-gray-700 mb-6">
+        <h2 className="text-3xl font-semibold text-center  mb-6">
           Add a New Tutorial
         </h2>
 
@@ -130,7 +130,7 @@ function AddTutorial() {
 
           {/* Email */}
           <div className="form-group grid grid-cols-1 gap-3">
-            <label className="text-lg font-medium text-gray-600">Email</label>
+            <label className="text-lg font-medium ">Email</label>
             <input
               type="email"
               name="email"
@@ -143,7 +143,7 @@ function AddTutorial() {
 
           {/* Image */}
           <div className="form-group grid grid-cols-1 gap-3">
-            <label className="text-lg font-medium text-gray-600">
+            <label className="text-lg font-medium ">
               Image URL
             </label>
             <input
@@ -160,7 +160,7 @@ function AddTutorial() {
 
           {/* Language Selection */}
           <div className="form-group grid grid-cols-1 gap-3">
-            <label className="text-lg font-medium text-gray-600">
+            <label className="text-lg font-medium ">
               Language
             </label>
             <select
@@ -182,7 +182,7 @@ function AddTutorial() {
 
           {/* Price */}
           <div className="form-group grid grid-cols-1 gap-3">
-            <label className="text-lg font-medium text-gray-600">Price</label>
+            <label className="text-lg font-medium ">Price</label>
             <input
               type="number"
               name="price"
@@ -197,7 +197,7 @@ function AddTutorial() {
 
           {/* Description */}
           <div className="form-group grid grid-cols-1 gap-3">
-            <label className="text-lg font-medium text-gray-600">
+            <label className="text-lg font-medium ">
               Description
             </label>
             <textarea
@@ -213,7 +213,7 @@ function AddTutorial() {
 
           {/* Review */}
           <div className="form-group grid grid-cols-1 gap-3">
-            <label className="text-lg font-medium text-gray-600">Review</label>
+            <label className="text-lg font-medium ">Review</label>
             <input
               type="number"
               name="review"

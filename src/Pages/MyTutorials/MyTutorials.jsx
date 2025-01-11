@@ -88,10 +88,10 @@ function MyTutorials() {
                   <td className="p-4 font-medium ">{tutorial.name}</td>
                   <td className="p-4 font-medium ">{tutorial.language}</td>
                   <td className="p-4 font-medium ">${tutorial.price}</td>
-                  <td className="p-4 text-gray-600">
+                  <td className="p-4 ">
                     {tutorial.description.slice(0, 70)}...
                   </td>
-                  <td className="p-4 text-gray-600">{tutorial.review}</td>
+                  <td className="p-4 ">{tutorial.review}</td>
                   <td className="p-4 flex space-x-2">
                     <Link
                       onClick={() => hundleDelete(tutorial._id)}
