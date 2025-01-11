@@ -84,7 +84,8 @@ function Details() {
 
           {/* Name and Language */}
           <div className="ml-6">
-            <h1 className="text-2xl font-semibold">{name || "Tutor Name"}</h1>
+            <h1 className="text-2xl font-semibold">{"Tutor Name"}</h1>
+            {/* <h1 className="text-2xl font-semibold">{name || "Tutor Name"}</h1> */}
             <p className=" text-md mt-1">
               🌐 Language: {language || "N/A"}
             </p>

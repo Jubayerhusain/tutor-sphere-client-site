@@ -86,7 +86,8 @@ function MyBookedTutors() {
               />
               <div className="p-2">
                 <h2 className="text-xl font-semibold mb-2">
-                  {tutor.name || "N/A"}
+                  {/* {tutor.name || "Turor Name"} */}
+                  {"Turor Name"}
                 </h2>
                 <p className="text-md mb-2">
                   <strong>Language:</strong> {tutor.language || "N/A"}
